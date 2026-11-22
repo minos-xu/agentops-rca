@@ -1,0 +1,20 @@
+test_dependency_failure_and_rate_limiter (__main__.HTTPFaults.test_dependency_failure_and_rate_limiter) ... ok
+test_cancellation_never_retried (__main__.Recovery.test_cancellation_never_retried) ... ok
+test_checkpoint_read_write_no_success_or_replay (__main__.Recovery.test_checkpoint_read_write_no_success_or_replay) ... ok
+test_classification (__main__.Recovery.test_classification) ... ok
+test_durable_insert_and_reset_failure (__main__.Recovery.test_durable_insert_and_reset_failure) ... ok
+test_failed_read_node_resume_does_not_repeat_prior_nodes (__main__.Recovery.test_failed_read_node_resume_does_not_repeat_prior_nodes) ... ok
+test_hitl_reject_repeat_guard (__main__.Recovery.test_hitl_reject_repeat_guard) ...
+test_llm_rate_limit_only_retry (__main__.Recovery.test_llm_rate_limit_only_retry) ... ok
+test_llm_timeout_permanent_and_sdk_budget (__main__.Recovery.test_llm_timeout_permanent_and_sdk_budget) ... ok
+test_mcp_connect_cleanup (__main__.Recovery.test_mcp_connect_cleanup) ... [MCP] connecting offline
+test_mcp_protocol_and_invalid_data (__main__.Recovery.test_mcp_protocol_and_invalid_data) ... ok
+test_mcp_timeout_bound (__main__.Recovery.test_mcp_timeout_bound) ... ok
+test_partial_evidence_real_graph (__main__.Recovery.test_partial_evidence_real_graph) ...
+test_postgres_start_failure_no_memory_fallback (__main__.Recovery.test_postgres_start_failure_no_memory_fallback) ... ok
+test_real_saver_failure_preserves_pending_checkpoint (__main__.Recovery.test_real_saver_failure_preserves_pending_checkpoint) ... ok
+test_retry_exhaustion (__main__.Recovery.test_retry_exhaustion) ... ok
+test_transient_recovery_and_trace (__main__.Recovery.test_transient_recovery_and_trace) ... ok
+test_unsafe_no_retry (__main__.Recovery.test_unsafe_no_retry) ... ok
+Ran 18 tests in 0.760s
+OK

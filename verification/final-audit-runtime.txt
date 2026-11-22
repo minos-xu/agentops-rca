@@ -1,0 +1,35 @@
+2026-11-22. Sanitized PASS lines from this audit.
+Fresh Compose project, dedicated loopback ports, new PostgreSQL volume.
+The persisted state is a synthetic checkpoint probe. DeepSeek was not called.
+
+Runtime and restart
+PASS: Compose rendering and generated templates
+PASS: rebuilt RAG assets from public synthetic document
+PASS: PostgreSQL SELECT 1, Redis PING, API /health (status=ok).
+PASS: real FastAPI /health and Redis dependency
+PASS: real Redis JSON cache, TTL and concurrent Lua rate limit (3 of 12 allowed)
+PASS: real API case catalogue matches the default-prefix Redis cache with a positive TTL
+PASS: real HTTP messages route returns 429 and valid Retry-After using the real Redis quota
+PASS: real PostgreSQL session mapping and synthetic AIMessage checkpoint
+PASS: identical session mapping, checkpoint id and message remain in PostgreSQL
+PASS: real HTTP session read returns persisted checkpoint message
+PASS: real FastAPI /health and Redis dependency
+PASS: identical session mapping, checkpoint id and message remain in PostgreSQL
+PASS: real HTTP session read returns persisted checkpoint message
+PASS: fresh isolated deployment stopped; test volume retained
+
+MCP clients started from outside the source directory
+PASS core import and OpenAPI
+PASS generated FAISS retrieval and local reranking
+PASS real Utility MCP STDIO discovery and calculator call
+PASS real Observability MCP STDIO discovery and log call
+PASS real RAG MCP STDIO discovery
+PASS real RAG MCP no-evidence call uses no LLM
+
+Local model files
+embedding: PASS (11 audited files)
+reranker: PASS (8 audited files)
+
+Python dependency check
+No broken requirements found.
+PASS offline dry run against installed constraints

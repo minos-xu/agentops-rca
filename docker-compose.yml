@@ -1,0 +1,50 @@
+name: ${DEPLOYMENT_NAME:-agentops-rca}
+services:
+  postgres:
+    image: postgres:16@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-agentops}
+      POSTGRES_USER: ${POSTGRES_USER:-agentops}
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+    secrets:
+      - postgres_password
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-57432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+    restart: unless-stopped
+    shm_size: 128mb
+    logging: &logging
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+  redis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${DEPLOYMENT_NAME:-agentops-rca}-redis:local
+    # Also order the infrastructure; the host manager waits for both health checks.
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${REDIS_PORT:-57479}:6379"
+    tmpfs:
+      - /data:rw,noexec,nosuid,size=32m,uid=999,gid=1000
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+    logging: *logging
+secrets:
+  postgres_password:
+    file: ./.deployment/secrets/postgres_password
+volumes:
+  pgdata:

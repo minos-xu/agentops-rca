@@ -1,0 +1,172 @@
+{
+  "local_imports": {
+    "answerability": [
+      "config",
+      "eval_dataset",
+      "reranker",
+      "retriever"
+    ],
+    "api_routes": [
+      "redis_runtime",
+      "runtime"
+    ],
+    "bm25_store": [
+      "chunker"
+    ],
+    "chunker": [],
+    "config": [
+      "deployment_config"
+    ],
+    "context_manager": [],
+    "deployment_config": [],
+    "embedder": [
+      "config"
+    ],
+    "embedding_store": [],
+    "eval_dataset": [],
+    "filters": [],
+    "generator": [
+      "config"
+    ],
+    "hitl": [],
+    "incident_mock_data": [],
+    "ingest": [
+      "bm25_store",
+      "chunker",
+      "config",
+      "embedder",
+      "embedding_store",
+      "loader",
+      "vector_store"
+    ],
+    "loader": [],
+    "main": [
+      "api_routes",
+      "traced_runtime"
+    ],
+    "mcp_stdio_launcher": [
+      "deployment_config"
+    ],
+    "mcp_tool_runtime": [
+      "observability",
+      "recovery"
+    ],
+    "memory_config": [
+      "deployment_config",
+      "memory_store",
+      "tool_config"
+    ],
+    "memory_retriever": [
+      "embedder",
+      "memory_store"
+    ],
+    "memory_store": [],
+    "observability": [],
+    "observability_mcp_client": [
+      "observability",
+      "recovery"
+    ],
+    "observability_mcp_server": [
+      "incident_mock_data"
+    ],
+    "postgres_runtime": [
+      "mcp_tool_runtime",
+      "memory_config",
+      "memory_retriever",
+      "memory_store",
+      "observability_mcp_client",
+      "postgres_store",
+      "runtime",
+      "workflow"
+    ],
+    "postgres_store": [
+      "hitl"
+    ],
+    "rag_mcp_server": [
+      "rag_pipeline"
+    ],
+    "rag_pipeline": [
+      "answerability",
+      "generator",
+      "reranker",
+      "retriever"
+    ],
+    "rca_core": [],
+    "recovery": [
+      "observability"
+    ],
+    "redis_runtime": [
+      "postgres_runtime",
+      "redis_store",
+      "runtime"
+    ],
+    "redis_store": [],
+    "reranker": [],
+    "retriever": [
+      "embedder",
+      "embedding_store",
+      "filters",
+      "vector_store"
+    ],
+    "runtime": [
+      "hitl",
+      "incident_mock_data",
+      "mcp_tool_runtime",
+      "memory_config",
+      "memory_retriever",
+      "memory_store",
+      "observability_mcp_client",
+      "workflow"
+    ],
+    "tool_config": [
+      "deployment_config"
+    ],
+    "trace_callback": [
+      "observability"
+    ],
+    "trace_report": [
+      "deployment_config"
+    ],
+    "traced_runtime": [
+      "deployment_config",
+      "observability",
+      "redis_runtime",
+      "trace_callback"
+    ],
+    "utility_mcp_server": [],
+    "vector_store": [
+      "config"
+    ],
+    "workflow": [
+      "context_manager",
+      "hitl",
+      "incident_mock_data",
+      "mcp_tool_runtime",
+      "memory_config",
+      "memory_retriever",
+      "memory_store",
+      "observability",
+      "observability_mcp_client",
+      "rca_core",
+      "recovery"
+    ]
+  },
+  "dynamic_entry_points": {
+    "uvicorn": "main:app",
+    "stdio": [
+      "mcp_stdio_launcher.py → rag_mcp_server.py",
+      "utility_mcp_server.py",
+      "observability_mcp_server.py"
+    ],
+    "management": [
+      "scripts/manage.sh → scripts/manage.py",
+      "scripts/manage.py → ingest.py / deployment_probe.py / run_tests.py / package_release.py"
+    ]
+  },
+  "generated_data": [
+    "vector.index",
+    "metadata.json",
+    "embedding_store.pkl",
+    "bm25_store.pkl"
+  ]
+}

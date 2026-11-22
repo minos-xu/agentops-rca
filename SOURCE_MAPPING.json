@@ -1,0 +1,302 @@
+{
+  ".dockerignore": {
+    "change": "copied unchanged",
+    "source": ".dockerignore"
+  },
+  ".env.docker.example": {
+    "change": "portable templates, isolated Compose name and public-demo default ports",
+    "source": ".env.docker.example"
+  },
+  ".env.example": {
+    "change": "portable templates, isolated Compose name and public-demo default ports",
+    "source": ".env.example"
+  },
+  "Dockerfile": {
+    "change": "portable templates, isolated Compose name and public-demo default ports",
+    "source": "Dockerfile"
+  },
+  "answerability.py": {
+    "change": "copied unchanged",
+    "source": "answerability.py"
+  },
+  "api_routes.py": {
+    "change": "synchronized module and runtime references",
+    "source": "lesson57_agentops_api.py"
+  },
+  "bm25_store.py": {
+    "change": "copied unchanged",
+    "source": "bm25_store.py"
+  },
+  "chunker.py": {
+    "change": "copied unchanged",
+    "source": "chunker.py"
+  },
+  "config.py": {
+    "change": "copied unchanged",
+    "source": "config.py"
+  },
+  "context_manager.py": {
+    "change": "copied unchanged",
+    "source": "context_manager.py"
+  },
+  "deploy/models.manifest.json": {
+    "change": "copied unchanged",
+    "source": "deploy/models.manifest.json"
+  },
+  "deploy/redis/redis.conf": {
+    "change": "copied unchanged",
+    "source": "deploy/redis/redis.conf"
+  },
+  "deployment_config.py": {
+    "change": "copied unchanged",
+    "source": "deployment_config.py"
+  },
+  "docker-compose.yml": {
+    "change": "portable templates, isolated Compose name and public-demo default ports",
+    "source": "docker-compose.yml"
+  },
+  "embedder.py": {
+    "change": "copied unchanged",
+    "source": "embedder.py"
+  },
+  "embedding_store.py": {
+    "change": "copied unchanged",
+    "source": "embedding_store.py"
+  },
+  "environment.yml": {
+    "change": "copied unchanged",
+    "source": "environment.yml"
+  },
+  "eval_dataset.py": {
+    "change": "copied unchanged",
+    "source": "eval_dataset.py"
+  },
+  "evaluation/eval_regression.py": {
+    "change": "copied unchanged",
+    "source": "archive/files/lesson61_regression_core.py"
+  },
+  "evaluation/eval_robustness.py": {
+    "change": "copied unchanged",
+    "source": "archive/files/lesson60_robustness_core.py"
+  },
+  "evaluation/eval_scoring.py": {
+    "change": "copied unchanged",
+    "source": "archive/files/lesson59_eval_core.py"
+  },
+  "filters.py": {
+    "change": "copied unchanged",
+    "source": "filters.py"
+  },
+  "generator.py": {
+    "change": "copied unchanged",
+    "source": "generator.py"
+  },
+  "hitl.py": {
+    "change": "copied unchanged",
+    "source": "lesson53_hitl_core.py"
+  },
+  "incident_mock_data.py": {
+    "change": "copied unchanged",
+    "source": "incident_mock_data.py"
+  },
+  "ingest.py": {
+    "change": "copied unchanged",
+    "source": "ingest.py"
+  },
+  "loader.py": {
+    "change": "copied unchanged",
+    "source": "loader.py"
+  },
+  "main.py": {
+    "change": "synchronized module and runtime references",
+    "source": "lesson63_agentops_api.py"
+  },
+  "mcp_stdio_launcher.py": {
+    "change": "copied unchanged",
+    "source": "mcp_stdio_launcher.py"
+  },
+  "mcp_tool_runtime.py": {
+    "change": "synchronized module and runtime references",
+    "source": "mcp_tool_runtime.py"
+  },
+  "memory_config.py": {
+    "change": "extracted exact active settings/prompt and memory CLI helper; omitted obsolete graph",
+    "source": "lesson49_langgraph_agentops_memory.py"
+  },
+  "memory_retriever.py": {
+    "change": "copied unchanged",
+    "source": "memory_retriever.py"
+  },
+  "memory_store.py": {
+    "change": "copied unchanged",
+    "source": "memory_store.py"
+  },
+  "observability.py": {
+    "change": "copied unchanged",
+    "source": "lesson62_observability.py"
+  },
+  "observability_mcp_client.py": {
+    "change": "synchronized module and runtime references",
+    "source": "observability_mcp_client.py"
+  },
+  "observability_mcp_server.py": {
+    "change": "copied unchanged",
+    "source": "observability_mcp_server.py"
+  },
+  "postgres_runtime.py": {
+    "change": "synchronized module and runtime references",
+    "source": "lesson55_runtime.py"
+  },
+  "postgres_store.py": {
+    "change": "synchronized module and runtime references",
+    "source": "lesson55_db.py"
+  },
+  "rag_mcp_server.py": {
+    "change": "copied unchanged",
+    "source": "rag_mcp_server.py"
+  },
+  "rag_pipeline.py": {
+    "change": "copied unchanged",
+    "source": "rag_pipeline.py"
+  },
+  "rca_core.py": {
+    "change": "copied unchanged",
+    "source": "lesson52_rca_core.py"
+  },
+  "recovery.py": {
+    "change": "synchronized module and runtime references",
+    "source": "lesson63_recovery.py"
+  },
+  "redis_runtime.py": {
+    "change": "synchronized module and runtime references",
+    "source": "lesson57_runtime.py"
+  },
+  "redis_store.py": {
+    "change": "copied unchanged",
+    "source": "lesson57_redis_store.py"
+  },
+  "requirements.lock.txt": {
+    "change": "updated seven pinned versions after OSV review; tested in an isolated Python overlay",
+    "source": "requirements.lock.txt"
+  },
+  "requirements.txt": {
+    "change": "declare verified direct HTTP transport and model downloader dependencies using existing constraints; updated MCP SDK",
+    "source": "requirements.txt"
+  },
+  "reranker.py": {
+    "change": "copied unchanged",
+    "source": "reranker.py"
+  },
+  "retriever.py": {
+    "change": "copied unchanged",
+    "source": "retriever.py"
+  },
+  "runtime.py": {
+    "change": "synchronized module and runtime references",
+    "source": "lesson54_runtime.py"
+  },
+  "scripts/deployment_probe.py": {
+    "change": "synchronized module and runtime references",
+    "source": "scripts/lesson64_acceptance.py"
+  },
+  "scripts/manage.py": {
+    "change": "renamed CLI, updated Uvicorn target and deployment isolation, added local ingestion command, cover both pinned HTTP transports in offline mode",
+    "source": "scripts/lesson64_manage.py"
+  },
+  "scripts/manage.sh": {
+    "change": "portable executable selection using active Conda or explicit override",
+    "source": "scripts/lesson64.sh"
+  },
+  "scripts/package_release.py": {
+    "change": "replaced course export with strict public-source allowlist packaging",
+    "source": "scripts/lesson64_package.py"
+  },
+  "scripts/run_tests.py": {
+    "change": "load selected tests and fixtures from tests/; retain temporary FaultSaver adapter; add scoring and robustness groups",
+    "source": "scripts/lesson64_regression.py"
+  },
+  "scripts/verify_models.py": {
+    "change": "copied unchanged",
+    "source": "scripts/lesson64_models.py"
+  },
+  "tests/fixtures/trace_api.py": {
+    "change": "small app wiring fixture required by existing integration guard",
+    "source": "archive/files/lesson62_agentops_api.py"
+  },
+  "tests/test_error_classification.py": {
+    "change": "synchronized module and runtime references",
+    "source": "archive/files/test_lesson63_unit.py"
+  },
+  "tests/test_eval_regression.py": {
+    "change": "synchronized module and runtime references",
+    "source": "archive/files/test_lesson61_regression_unit.py"
+  },
+  "tests/test_eval_robustness.py": {
+    "change": "synchronized module and runtime references",
+    "source": "archive/files/test_lesson60_robustness_unit.py"
+  },
+  "tests/test_eval_scoring.py": {
+    "change": "synchronized module and runtime references",
+    "source": "archive/files/test_lesson59_eval_unit.py"
+  },
+  "tests/test_hitl.py": {
+    "change": "synchronized module and runtime references",
+    "source": "archive/files/test_lesson53_hitl.py"
+  },
+  "tests/test_observability.py": {
+    "change": "synchronized module and runtime references",
+    "source": "archive/files/test_lesson62_observability.py"
+  },
+  "tests/test_postgres_store.py": {
+    "change": "synchronized module and runtime references",
+    "source": "archive/files/test_lesson55_unit.py"
+  },
+  "tests/test_rca.py": {
+    "change": "synchronized module and runtime references",
+    "source": "archive/files/test_lesson52_rca.py"
+  },
+  "tests/test_recovery.py": {
+    "change": "synchronized module and runtime references",
+    "source": "archive/files/test_lesson63_recovery.py"
+  },
+  "tests/test_redis_degradation.py": {
+    "change": "synchronized module and runtime references",
+    "source": "archive/files/test_lesson58_degradation.py"
+  },
+  "tests/test_trace_wiring.py": {
+    "change": "updated fixture/module paths; original wiring assertions preserved",
+    "source": "archive/files/test_lesson62_integration_offline.py"
+  },
+  "tests/test_workflow_interrupt.py": {
+    "change": "synchronized module and runtime references",
+    "source": "archive/files/test_lesson53_graph.py"
+  },
+  "tool_config.py": {
+    "change": "extracted exact shared settings; omitted obsolete graph/CLI",
+    "source": "lesson46_langgraph_multi_mcp.py"
+  },
+  "trace_callback.py": {
+    "change": "synchronized module and runtime references",
+    "source": "lesson62_trace_callback.py"
+  },
+  "trace_report.py": {
+    "change": "copied unchanged",
+    "source": "lesson62_trace_report.py"
+  },
+  "traced_runtime.py": {
+    "change": "synchronized module and runtime references",
+    "source": "lesson62_instrumented_runtime.py"
+  },
+  "utility_mcp_server.py": {
+    "change": "copied unchanged",
+    "source": "utility_mcp_server.py"
+  },
+  "vector_store.py": {
+    "change": "copied unchanged",
+    "source": "vector_store.py"
+  },
+  "workflow.py": {
+    "change": "synchronized module and runtime references",
+    "source": "lesson53_agentops_hitl.py"
+  }
+}

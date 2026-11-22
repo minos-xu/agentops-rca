@@ -1,0 +1,65 @@
+{
+  "kind": "offline regression in temporary source snapshot",
+  "python": "3.12.14",
+  "test_script_groups": 12,
+  "passed": true,
+  "live_provider_invoked": false,
+  "results": [
+    {
+      "test": "test_hitl.py",
+      "exit_code": 0
+    },
+    {
+      "test": "test_workflow_interrupt.py",
+      "exit_code": 0
+    },
+    {
+      "test": "test_rca.py",
+      "exit_code": 0
+    },
+    {
+      "test": "test_postgres_store.py",
+      "exit_code": 0
+    },
+    {
+      "test": "test_redis_degradation.py",
+      "exit_code": 0
+    },
+    {
+      "test": "test_eval_regression.py",
+      "exit_code": 0
+    },
+    {
+      "test": "test_eval_scoring.py",
+      "exit_code": 0
+    },
+    {
+      "test": "test_eval_robustness.py",
+      "exit_code": 0
+    },
+    {
+      "test": "test_observability.py",
+      "exit_code": 0
+    },
+    {
+      "test": "test_trace_wiring.py",
+      "exit_code": 0
+    },
+    {
+      "test": "test_error_classification.py",
+      "exit_code": 0
+    },
+    {
+      "test": "test_recovery.py",
+      "exit_code": 0
+    }
+  ],
+  "test_harness_adjustments": [
+    {
+      "test": "test_recovery.py::Recovery.test_real_saver_failure_preserves_pending_checkpoint",
+      "change": "Temporary FaultSaver uses a shared fault-flag dict across shallow clones; all assertions and strict msgpack remain enabled.",
+      "reason": "LangGraph 1.2.16 / checkpoint 4.3.0 derives a strict-serde saver clone; original boolean flag updates target the unused saver instance.",
+      "source_test_modified_by_runner": false
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+# Create with: conda env create -f environment.yml
+# The environment name preserves the project interpreter contract.
+name: agent-dev
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12.14
+  - pip=26.2.1
+  - pip:
+      - -r requirements.txt

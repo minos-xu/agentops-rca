@@ -1,0 +1,126 @@
+{
+  "audit_date_local": "2026-11-22",
+  "environment": "Python 3.12.14 in a temporary agent-dev-derived environment with the release dependency updates",
+  "offline_regression": {
+    "kind": "offline_regression",
+    "python": "3.12.14",
+    "network_connections_allowed": false,
+    "existing_env_or_data_copied": false,
+    "test_harness_adjustments": [
+      {
+        "test": "test_recovery.py::Recovery.test_real_saver_failure_preserves_pending_checkpoint",
+        "change": "Temporary FaultSaver uses a shared fault-flag dict across shallow clones; all assertions and strict msgpack remain enabled.",
+        "reason": "LangGraph 1.2.16 / checkpoint 4.3.0 derives a strict-serde saver clone; original boolean flag updates target the unused saver instance.",
+        "source_test_modified_by_runner": false
+      }
+    ],
+    "results": [
+      {
+        "test": "test_hitl.py",
+        "exit_code": 0,
+        "seconds": 0.064
+      },
+      {
+        "test": "test_workflow_interrupt.py",
+        "exit_code": 0,
+        "seconds": 1.317
+      },
+      {
+        "test": "test_rca.py",
+        "exit_code": 0,
+        "seconds": 0.064
+      },
+      {
+        "test": "test_postgres_store.py",
+        "exit_code": 0,
+        "seconds": 0.165
+      },
+      {
+        "test": "test_redis_degradation.py",
+        "exit_code": 0,
+        "seconds": 0.215
+      },
+      {
+        "test": "test_eval_regression.py",
+        "exit_code": 0,
+        "seconds": 0.065
+      },
+      {
+        "test": "test_eval_scoring.py",
+        "exit_code": 0,
+        "seconds": 0.064
+      },
+      {
+        "test": "test_eval_robustness.py",
+        "exit_code": 0,
+        "seconds": 0.064
+      },
+      {
+        "test": "test_observability.py",
+        "exit_code": 0,
+        "seconds": 10.942
+      },
+      {
+        "test": "test_trace_wiring.py",
+        "exit_code": 0,
+        "seconds": 0.064
+      },
+      {
+        "test": "test_error_classification.py",
+        "exit_code": 0,
+        "seconds": 1.017
+      },
+      {
+        "test": "test_recovery.py",
+        "exit_code": 0,
+        "seconds": 11.548
+      }
+    ],
+    "passed": true,
+    "limitations": "Mocked LLM/MCP/database faults and local models; does not validate live DeepSeek or production telemetry."
+  },
+  "supply_chain": {
+    "osv": {
+      "checked": 119,
+      "source": "OSV package/version query",
+      "matches": []
+    },
+    "pip_check_output": "No broken requirements found.",
+    "pip_dry_run": "PASS (--no-index, against the installed environment)",
+    "docker_compose": "v5.7.0",
+    "container_vulnerability_scan": "not performed",
+    "model_checks": [
+      "embedding: PASS (11 audited files)",
+      "reranker: PASS (8 audited files)"
+    ]
+  },
+  "source_mappings_verified": 75,
+  "scope": {
+    "real_DeepSeek_calls": 0,
+    "new_postgres_volume": true,
+    "test_services_stopped": true,
+    "test_postgres_volume_retained": true,
+    "mcp_parent_cwd_outside_project": true,
+    "raw_session_or_tool_payloads_in_evidence": false
+  },
+  "final_static_review": {
+    "text_files_scanned": 101,
+    "python_files_parsed": 65,
+    "original_files_hash_verified": 337,
+    "core_definitions_ast_identical": 16,
+    "known_credentials_detected": 0,
+    "unreviewed_literal_credentials": 0,
+    "placeholder_url_locations": [
+      ".env.example",
+      "scripts/manage.py",
+      "scripts/run_tests.py"
+    ],
+    "compose_loopback": true
+  },
+  "git_staging_review": {
+    "candidate_has_git_history": false,
+    "temporary_git_staged_allowed_files": 101,
+    "ignored_intentionally_private_path_examples": 16,
+    "tracked_environment_templates": 2
+  }
+}

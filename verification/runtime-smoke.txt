@@ -1,0 +1,18 @@
+Sanitized exact PASS lines from isolated local verification.
+PASS: Compose rendering and generated templates
+PASS: rebuilt RAG assets from public synthetic document
+PASS: PostgreSQL SELECT 1, Redis PING, API /health (status=ok).
+PASS: real FastAPI /health and Redis dependency
+PASS: real Redis JSON cache, TTL and concurrent Lua rate limit (3 of 12 allowed)
+PASS: real API case catalogue matches the default-prefix Redis cache with a positive TTL
+PASS: real HTTP messages route returns 429 and valid Retry-After using the real Redis quota
+PASS: real PostgreSQL session mapping and synthetic AIMessage checkpoint
+PASS: identical session mapping, checkpoint id and message remain in PostgreSQL
+PASS: real HTTP session read returns persisted checkpoint message
+PASS: fresh isolated deployment stopped; test volume retained
+PASS core import and OpenAPI
+PASS generated FAISS retrieval and local reranking
+PASS real Utility MCP STDIO discovery and calculator call
+PASS real Observability MCP STDIO discovery and log call
+PASS real RAG MCP STDIO discovery
+PASS real RAG MCP STDIO call returns no answer with an isolated empty knowledge base

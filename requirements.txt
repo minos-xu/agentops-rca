@@ -1,0 +1,23 @@
+# Runtime and deployment-probe direct dependencies, pinned to audited agent-dev versions.
+# Python 3.12.14. Install with the agent-dev interpreter.
+# Constraints pin transitive versions without installing every package in the audit snapshot.
+-c requirements.lock.txt
+faiss-cpu==1.15.0
+fastapi==0.162.2
+httpx==0.28.1
+httpx2==2.12.0
+huggingface_hub==1.30.0
+jieba==0.42.1
+langchain-core==1.6.12
+langgraph==1.2.16
+langgraph-checkpoint-postgres==3.2.0
+mcp==2.2.0
+numpy==2.5.3
+openai==3.7.0
+psycopg[binary]==3.3.8
+pydantic==2.13.5
+python-dotenv==1.2.3
+rank-bm25==0.2.2
+redis==6.4.0
+sentence-transformers==6.0.1
+uvicorn==0.52.4

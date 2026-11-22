@@ -1,0 +1,14 @@
+{
+  "text_files_scanned": 96,
+  "python_files_parsed": 65,
+  "original_files_hash_verified": 337,
+  "core_definitions_ast_identical": 16,
+  "known_credentials_detected": 0,
+  "unreviewed_literal_credentials": 0,
+  "placeholder_url_locations": [
+    ".env.example",
+    "scripts/manage.py",
+    "scripts/run_tests.py"
+  ],
+  "compose_loopback": true
+}
