@@ -1,0 +1,6 @@
+[PASS] LangGraph interrupt paused before simulation
+[PASS] same thread_id resume approved once
+[PASS] rejected approval never simulates
+[PASS] cross-thread action ID cannot approve another proposal
+[PASS] insufficient evidence skips approval and simulation
+ALL LESSON 53 GRAPH TESTS PASSED

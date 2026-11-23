@@ -1,0 +1,18 @@
+[PASS] INC-001 evidence catalog: 22 traceable facts
+[PASS] INC-002 evidence catalog: 15 traceable facts
+[PASS] INC-003 evidence catalog: 14 traceable facts
+[PASS] valid prioritized hypothesis with metrics + logs
+[PASS] ambiguous INC-003 remains insufficient_evidence
+[PASS] symptoms alone cannot prioritize a root mechanism
+[PASS] mechanism quality gate on three synthetic cases
+[PASS] fabricated evidence ID rejected
+[PASS] cross-incident evidence ID rejected
+[PASS] wrong incident ID rejected
+[PASS] unapproved remediation rejected
+[PASS] fabricated recovery rejected
+[PASS] write operation in next steps rejected
+[PASS] one-source overclaim rejected
+[PASS] missing tool source cannot support prioritized report
+[PASS] cross-incident MCP payload discarded, becomes explicit gap
+[PASS] safe fallback with no fabricated RCA or remediation
+ALL LESSON 52 RCA TESTS PASSED

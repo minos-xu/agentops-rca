@@ -1,0 +1,7 @@
+Isolated project agentops-rca-layout-20261123; ports 58432/58479/8264.
+PASS: real FastAPI /health and Redis dependency
+PASS: identical session mapping, checkpoint id and message remain in PostgreSQL
+PASS: real HTTP session read returns persisted checkpoint message
+No DeepSeek calls; checkpoint content is a synthetic deployment probe, not a production RCA result.
+
+exit_code: 0

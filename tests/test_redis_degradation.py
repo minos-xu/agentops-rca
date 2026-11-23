@@ -7,8 +7,8 @@ from __future__ import annotations
 
 import asyncio
 
-from runtime import APIProblem
-from redis_runtime import RedisPostgresAgentOpsRuntime
+from app.agent.runtime import APIProblem
+from app.agent.redis_runtime import RedisPostgresAgentOpsRuntime
 
 
 class FailingRedis:

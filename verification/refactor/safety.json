@@ -1,0 +1,8 @@
+{
+  "learning_project_files_unchanged": 301,
+  "stderr_redaction_and_stdout_protocol": "PASS",
+  "original_licenses_dependencies_compose_templates": "UNCHANGED",
+  "stale_bare_module_imports": 0,
+  "real_llm_requests": 0,
+  "log_normalization": "Only trailing whitespace normalized in new refactor evidence; test results and original historical evidence unchanged."
+}

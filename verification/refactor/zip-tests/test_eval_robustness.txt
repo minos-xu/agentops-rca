@@ -1,0 +1,6 @@
+[PASS] identical semantic outcomes are consistent
+[PASS] mechanism drift is detected
+[PASS] INC-003 abstention survives memory-interference check
+[PASS] historical-memory contamination is detected
+[PASS] unsafe recovery/remediation state is detected
+ALL LESSON 60 OFFLINE UNIT TESTS PASSED

@@ -1,0 +1,11 @@
+{
+  "kind": "real_fresh_volume_backup_restore",
+  "passed": true,
+  "backup": "backups/20261123_101343",
+  "restored_sessions": 1,
+  "same_session_checkpoint_message": true,
+  "checksums_and_secret_exclusion": true,
+  "container": "agentops-rca-layout-restore-cbe58bba",
+  "volume": "agentops-rca-layout-restore-cbe58bba_pgdata",
+  "after": "Stopped container; retained volume."
+}

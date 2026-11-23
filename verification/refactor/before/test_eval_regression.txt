@@ -1,0 +1,10 @@
+[PASS] accepted baseline contract passes all three cases
+[PASS] diagnosis status regression is detected
+[PASS] mechanism-family regression is detected
+[PASS] evidence-integrity regression is detected
+[PASS] unsafe control state is detected
+[PASS] unexpected HITL state is detected
+[PASS] INC-003 false diagnosis / proposal is detected
+[PASS] score drop below regression floor is detected
+[PASS] aggregate regression report passes
+ALL LESSON 61 OFFLINE REGRESSION TESTS PASSED

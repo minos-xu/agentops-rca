@@ -1,302 +1,904 @@
 {
   ".dockerignore": {
     "change": "copied unchanged",
-    "source": ".dockerignore"
+    "source": ".dockerignore",
+    "previous_public_path": ".dockerignore"
   },
   ".env.docker.example": {
     "change": "portable templates, isolated Compose name and public-demo default ports",
-    "source": ".env.docker.example"
+    "source": ".env.docker.example",
+    "previous_public_path": ".env.docker.example"
   },
   ".env.example": {
     "change": "portable templates, isolated Compose name and public-demo default ports",
-    "source": ".env.example"
+    "source": ".env.example",
+    "previous_public_path": ".env.example"
   },
   "Dockerfile": {
     "change": "portable templates, isolated Compose name and public-demo default ports",
-    "source": "Dockerfile"
+    "source": "Dockerfile",
+    "previous_public_path": "Dockerfile"
   },
-  "answerability.py": {
+  "app/rag/answerability.py": {
     "change": "copied unchanged",
-    "source": "answerability.py"
+    "source": "answerability.py",
+    "previous_public_path": "answerability.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "api_routes.py": {
+  "app/api/routes.py": {
     "change": "synchronized module and runtime references",
-    "source": "lesson57_agentops_api.py"
+    "source": "lesson57_agentops_api.py",
+    "previous_public_path": "api_routes.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "bm25_store.py": {
+  "app/rag/bm25_store.py": {
     "change": "copied unchanged",
-    "source": "bm25_store.py"
+    "source": "bm25_store.py",
+    "previous_public_path": "bm25_store.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "chunker.py": {
+  "app/rag/chunker.py": {
     "change": "copied unchanged",
-    "source": "chunker.py"
+    "source": "chunker.py",
+    "previous_public_path": "chunker.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "config.py": {
+  "app/core/config.py": {
     "change": "copied unchanged",
-    "source": "config.py"
+    "source": "config.py",
+    "previous_public_path": "config.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "context_manager.py": {
+  "app/core/context_manager.py": {
     "change": "copied unchanged",
-    "source": "context_manager.py"
+    "source": "context_manager.py",
+    "previous_public_path": "context_manager.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
   "deploy/models.manifest.json": {
     "change": "copied unchanged",
-    "source": "deploy/models.manifest.json"
+    "source": "deploy/models.manifest.json",
+    "previous_public_path": "deploy/models.manifest.json"
   },
   "deploy/redis/redis.conf": {
     "change": "copied unchanged",
-    "source": "deploy/redis/redis.conf"
+    "source": "deploy/redis/redis.conf",
+    "previous_public_path": "deploy/redis/redis.conf"
   },
-  "deployment_config.py": {
+  "app/core/deployment_config.py": {
     "change": "copied unchanged",
-    "source": "deployment_config.py"
+    "source": "deployment_config.py",
+    "previous_public_path": "deployment_config.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
   "docker-compose.yml": {
     "change": "portable templates, isolated Compose name and public-demo default ports",
-    "source": "docker-compose.yml"
+    "source": "docker-compose.yml",
+    "previous_public_path": "docker-compose.yml"
   },
-  "embedder.py": {
+  "app/rag/embedder.py": {
     "change": "copied unchanged",
-    "source": "embedder.py"
+    "source": "embedder.py",
+    "previous_public_path": "embedder.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "embedding_store.py": {
+  "app/rag/embedding_store.py": {
     "change": "copied unchanged",
-    "source": "embedding_store.py"
+    "source": "embedding_store.py",
+    "previous_public_path": "embedding_store.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
   "environment.yml": {
     "change": "copied unchanged",
-    "source": "environment.yml"
+    "source": "environment.yml",
+    "previous_public_path": "environment.yml"
   },
-  "eval_dataset.py": {
+  "app/rag/eval_dataset.py": {
     "change": "copied unchanged",
-    "source": "eval_dataset.py"
+    "source": "eval_dataset.py",
+    "previous_public_path": "eval_dataset.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
   "evaluation/eval_regression.py": {
     "change": "copied unchanged",
-    "source": "archive/files/lesson61_regression_core.py"
+    "source": "archive/files/lesson61_regression_core.py",
+    "previous_public_path": "evaluation/eval_regression.py"
   },
   "evaluation/eval_robustness.py": {
     "change": "copied unchanged",
-    "source": "archive/files/lesson60_robustness_core.py"
+    "source": "archive/files/lesson60_robustness_core.py",
+    "previous_public_path": "evaluation/eval_robustness.py"
   },
   "evaluation/eval_scoring.py": {
     "change": "copied unchanged",
-    "source": "archive/files/lesson59_eval_core.py"
+    "source": "archive/files/lesson59_eval_core.py",
+    "previous_public_path": "evaluation/eval_scoring.py"
   },
-  "filters.py": {
+  "app/rag/filters.py": {
     "change": "copied unchanged",
-    "source": "filters.py"
+    "source": "filters.py",
+    "previous_public_path": "filters.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "generator.py": {
+  "app/rag/generator.py": {
     "change": "copied unchanged",
-    "source": "generator.py"
+    "source": "generator.py",
+    "previous_public_path": "generator.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "hitl.py": {
+  "app/agent/hitl.py": {
     "change": "copied unchanged",
-    "source": "lesson53_hitl_core.py"
+    "source": "lesson53_hitl_core.py",
+    "previous_public_path": "hitl.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "incident_mock_data.py": {
+  "app/rca/incident_mock_data.py": {
     "change": "copied unchanged",
-    "source": "incident_mock_data.py"
+    "source": "incident_mock_data.py",
+    "previous_public_path": "incident_mock_data.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "ingest.py": {
+  "app/rag/ingest.py": {
     "change": "copied unchanged",
-    "source": "ingest.py"
+    "source": "ingest.py",
+    "previous_public_path": "ingest.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "loader.py": {
+  "app/rag/loader.py": {
     "change": "copied unchanged",
-    "source": "loader.py"
+    "source": "loader.py",
+    "previous_public_path": "loader.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "main.py": {
+  "app/main.py": {
     "change": "synchronized module and runtime references",
-    "source": "lesson63_agentops_api.py"
+    "source": "lesson63_agentops_api.py",
+    "previous_public_path": "main.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "mcp_stdio_launcher.py": {
+  "app/tools/mcp_stdio_launcher.py": {
     "change": "copied unchanged",
-    "source": "mcp_stdio_launcher.py"
+    "source": "mcp_stdio_launcher.py",
+    "previous_public_path": "mcp_stdio_launcher.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "mcp_tool_runtime.py": {
+  "app/tools/mcp_tool_runtime.py": {
     "change": "synchronized module and runtime references",
-    "source": "mcp_tool_runtime.py"
+    "source": "mcp_tool_runtime.py",
+    "previous_public_path": "mcp_tool_runtime.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "memory_config.py": {
+  "app/memory/memory_config.py": {
     "change": "extracted exact active settings/prompt and memory CLI helper; omitted obsolete graph",
-    "source": "lesson49_langgraph_agentops_memory.py"
+    "source": "lesson49_langgraph_agentops_memory.py",
+    "previous_public_path": "memory_config.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "memory_retriever.py": {
+  "app/memory/memory_retriever.py": {
     "change": "copied unchanged",
-    "source": "memory_retriever.py"
+    "source": "memory_retriever.py",
+    "previous_public_path": "memory_retriever.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "memory_store.py": {
+  "app/memory/memory_store.py": {
     "change": "copied unchanged",
-    "source": "memory_store.py"
+    "source": "memory_store.py",
+    "previous_public_path": "memory_store.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "observability.py": {
+  "app/telemetry/observability.py": {
     "change": "copied unchanged",
-    "source": "lesson62_observability.py"
+    "source": "lesson62_observability.py",
+    "previous_public_path": "observability.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "observability_mcp_client.py": {
+  "app/tools/observability_mcp_client.py": {
     "change": "synchronized module and runtime references",
-    "source": "observability_mcp_client.py"
+    "source": "observability_mcp_client.py",
+    "previous_public_path": "observability_mcp_client.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "observability_mcp_server.py": {
+  "app/tools/observability_mcp_server.py": {
     "change": "copied unchanged",
-    "source": "observability_mcp_server.py"
+    "source": "observability_mcp_server.py",
+    "previous_public_path": "observability_mcp_server.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "postgres_runtime.py": {
+  "app/agent/postgres_runtime.py": {
     "change": "synchronized module and runtime references",
-    "source": "lesson55_runtime.py"
+    "source": "lesson55_runtime.py",
+    "previous_public_path": "postgres_runtime.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "postgres_store.py": {
+  "app/storage/postgres_store.py": {
     "change": "synchronized module and runtime references",
-    "source": "lesson55_db.py"
+    "source": "lesson55_db.py",
+    "previous_public_path": "postgres_store.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "rag_mcp_server.py": {
+  "app/tools/rag_mcp_server.py": {
     "change": "copied unchanged",
-    "source": "rag_mcp_server.py"
+    "source": "rag_mcp_server.py",
+    "previous_public_path": "rag_mcp_server.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "rag_pipeline.py": {
+  "app/rag/rag_pipeline.py": {
     "change": "copied unchanged",
-    "source": "rag_pipeline.py"
+    "source": "rag_pipeline.py",
+    "previous_public_path": "rag_pipeline.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "rca_core.py": {
+  "app/rca/rca_core.py": {
     "change": "copied unchanged",
-    "source": "lesson52_rca_core.py"
+    "source": "lesson52_rca_core.py",
+    "previous_public_path": "rca_core.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "recovery.py": {
+  "app/agent/recovery.py": {
     "change": "synchronized module and runtime references",
-    "source": "lesson63_recovery.py"
+    "source": "lesson63_recovery.py",
+    "previous_public_path": "recovery.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "redis_runtime.py": {
+  "app/agent/redis_runtime.py": {
     "change": "synchronized module and runtime references",
-    "source": "lesson57_runtime.py"
+    "source": "lesson57_runtime.py",
+    "previous_public_path": "redis_runtime.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "redis_store.py": {
+  "app/storage/redis_store.py": {
     "change": "copied unchanged",
-    "source": "lesson57_redis_store.py"
+    "source": "lesson57_redis_store.py",
+    "previous_public_path": "redis_store.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
   "requirements.lock.txt": {
     "change": "updated seven pinned versions after OSV review; tested in an isolated Python overlay",
-    "source": "requirements.lock.txt"
+    "source": "requirements.lock.txt",
+    "previous_public_path": "requirements.lock.txt"
   },
   "requirements.txt": {
     "change": "declare verified direct HTTP transport and model downloader dependencies using existing constraints; updated MCP SDK",
-    "source": "requirements.txt"
+    "source": "requirements.txt",
+    "previous_public_path": "requirements.txt"
   },
-  "reranker.py": {
+  "app/rag/reranker.py": {
     "change": "copied unchanged",
-    "source": "reranker.py"
+    "source": "reranker.py",
+    "previous_public_path": "reranker.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "retriever.py": {
+  "app/rag/retriever.py": {
     "change": "copied unchanged",
-    "source": "retriever.py"
+    "source": "retriever.py",
+    "previous_public_path": "retriever.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "runtime.py": {
+  "app/agent/runtime.py": {
     "change": "synchronized module and runtime references",
-    "source": "lesson54_runtime.py"
+    "source": "lesson54_runtime.py",
+    "previous_public_path": "runtime.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
   "scripts/deployment_probe.py": {
     "change": "synchronized module and runtime references",
-    "source": "scripts/lesson64_acceptance.py"
+    "source": "scripts/lesson64_acceptance.py",
+    "previous_public_path": "scripts/deployment_probe.py"
   },
   "scripts/manage.py": {
     "change": "renamed CLI, updated Uvicorn target and deployment isolation, added local ingestion command, cover both pinned HTTP transports in offline mode",
-    "source": "scripts/lesson64_manage.py"
+    "source": "scripts/lesson64_manage.py",
+    "previous_public_path": "scripts/manage.py"
   },
   "scripts/manage.sh": {
     "change": "portable executable selection using active Conda or explicit override",
-    "source": "scripts/lesson64.sh"
+    "source": "scripts/lesson64.sh",
+    "previous_public_path": "scripts/manage.sh"
   },
   "scripts/package_release.py": {
     "change": "replaced course export with strict public-source allowlist packaging",
-    "source": "scripts/lesson64_package.py"
+    "source": "scripts/lesson64_package.py",
+    "previous_public_path": "scripts/package_release.py"
   },
   "scripts/run_tests.py": {
     "change": "load selected tests and fixtures from tests/; retain temporary FaultSaver adapter; add scoring and robustness groups",
-    "source": "scripts/lesson64_regression.py"
+    "source": "scripts/lesson64_regression.py",
+    "previous_public_path": "scripts/run_tests.py"
   },
   "scripts/verify_models.py": {
     "change": "copied unchanged",
-    "source": "scripts/lesson64_models.py"
+    "source": "scripts/lesson64_models.py",
+    "previous_public_path": "scripts/verify_models.py"
   },
   "tests/fixtures/trace_api.py": {
     "change": "small app wiring fixture required by existing integration guard",
-    "source": "archive/files/lesson62_agentops_api.py"
+    "source": "archive/files/lesson62_agentops_api.py",
+    "previous_public_path": "tests/fixtures/trace_api.py"
   },
   "tests/test_error_classification.py": {
     "change": "synchronized module and runtime references",
-    "source": "archive/files/test_lesson63_unit.py"
+    "source": "archive/files/test_lesson63_unit.py",
+    "previous_public_path": "tests/test_error_classification.py"
   },
   "tests/test_eval_regression.py": {
     "change": "synchronized module and runtime references",
-    "source": "archive/files/test_lesson61_regression_unit.py"
+    "source": "archive/files/test_lesson61_regression_unit.py",
+    "previous_public_path": "tests/test_eval_regression.py"
   },
   "tests/test_eval_robustness.py": {
     "change": "synchronized module and runtime references",
-    "source": "archive/files/test_lesson60_robustness_unit.py"
+    "source": "archive/files/test_lesson60_robustness_unit.py",
+    "previous_public_path": "tests/test_eval_robustness.py"
   },
   "tests/test_eval_scoring.py": {
     "change": "synchronized module and runtime references",
-    "source": "archive/files/test_lesson59_eval_unit.py"
+    "source": "archive/files/test_lesson59_eval_unit.py",
+    "previous_public_path": "tests/test_eval_scoring.py"
   },
   "tests/test_hitl.py": {
     "change": "synchronized module and runtime references",
-    "source": "archive/files/test_lesson53_hitl.py"
+    "source": "archive/files/test_lesson53_hitl.py",
+    "previous_public_path": "tests/test_hitl.py"
   },
   "tests/test_observability.py": {
     "change": "synchronized module and runtime references",
-    "source": "archive/files/test_lesson62_observability.py"
+    "source": "archive/files/test_lesson62_observability.py",
+    "previous_public_path": "tests/test_observability.py"
   },
   "tests/test_postgres_store.py": {
     "change": "synchronized module and runtime references",
-    "source": "archive/files/test_lesson55_unit.py"
+    "source": "archive/files/test_lesson55_unit.py",
+    "previous_public_path": "tests/test_postgres_store.py"
   },
   "tests/test_rca.py": {
     "change": "synchronized module and runtime references",
-    "source": "archive/files/test_lesson52_rca.py"
+    "source": "archive/files/test_lesson52_rca.py",
+    "previous_public_path": "tests/test_rca.py"
   },
   "tests/test_recovery.py": {
     "change": "synchronized module and runtime references",
-    "source": "archive/files/test_lesson63_recovery.py"
+    "source": "archive/files/test_lesson63_recovery.py",
+    "previous_public_path": "tests/test_recovery.py"
   },
   "tests/test_redis_degradation.py": {
     "change": "synchronized module and runtime references",
-    "source": "archive/files/test_lesson58_degradation.py"
+    "source": "archive/files/test_lesson58_degradation.py",
+    "previous_public_path": "tests/test_redis_degradation.py"
   },
   "tests/test_trace_wiring.py": {
     "change": "updated fixture/module paths; original wiring assertions preserved",
-    "source": "archive/files/test_lesson62_integration_offline.py"
+    "source": "archive/files/test_lesson62_integration_offline.py",
+    "previous_public_path": "tests/test_trace_wiring.py"
   },
   "tests/test_workflow_interrupt.py": {
     "change": "synchronized module and runtime references",
-    "source": "archive/files/test_lesson53_graph.py"
+    "source": "archive/files/test_lesson53_graph.py",
+    "previous_public_path": "tests/test_workflow_interrupt.py"
   },
-  "tool_config.py": {
+  "app/tools/tool_config.py": {
     "change": "extracted exact shared settings; omitted obsolete graph/CLI",
-    "source": "lesson46_langgraph_multi_mcp.py"
+    "source": "lesson46_langgraph_multi_mcp.py",
+    "previous_public_path": "tool_config.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "trace_callback.py": {
+  "app/telemetry/trace_callback.py": {
     "change": "synchronized module and runtime references",
-    "source": "lesson62_trace_callback.py"
+    "source": "lesson62_trace_callback.py",
+    "previous_public_path": "trace_callback.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "trace_report.py": {
+  "app/telemetry/trace_report.py": {
     "change": "copied unchanged",
-    "source": "lesson62_trace_report.py"
+    "source": "lesson62_trace_report.py",
+    "previous_public_path": "trace_report.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "traced_runtime.py": {
+  "app/agent/traced_runtime.py": {
     "change": "synchronized module and runtime references",
-    "source": "lesson62_instrumented_runtime.py"
+    "source": "lesson62_instrumented_runtime.py",
+    "previous_public_path": "traced_runtime.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "utility_mcp_server.py": {
+  "app/tools/utility_mcp_server.py": {
     "change": "copied unchanged",
-    "source": "utility_mcp_server.py"
+    "source": "utility_mcp_server.py",
+    "previous_public_path": "utility_mcp_server.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "vector_store.py": {
+  "app/rag/vector_store.py": {
     "change": "copied unchanged",
-    "source": "vector_store.py"
+    "source": "vector_store.py",
+    "previous_public_path": "vector_store.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
   },
-  "workflow.py": {
+  "app/agent/workflow.py": {
     "change": "synchronized module and runtime references",
-    "source": "lesson53_agentops_hitl.py"
+    "source": "lesson53_agentops_hitl.py",
+    "previous_public_path": "workflow.py",
+    "package_refactor": "Module/document move; imports and stable startup paths updated, business semantics retained."
+  },
+  ".gitignore": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "LICENSE": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "MODULE_DEPENDENCIES.json": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "README.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "RELEASE_FILES.json": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "SOURCE_MAPPING.json": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "THIRD_PARTY_NOTICES.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "app/__init__.py": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "app/agent/__init__.py": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "app/api/__init__.py": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "app/core/__init__.py": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "app/memory/__init__.py": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "app/rag/__init__.py": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "app/rca/__init__.py": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "app/storage/__init__.py": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "app/telemetry/__init__.py": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "app/tools/__init__.py": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "docs/architecture.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "docs/deployment.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "docs/refactor/01_BEFORE_AFTER_STRUCTURE.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "docs/refactor/02_MODULE_MIGRATION_MAP.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "docs/refactor/03_IMPORT_AND_STARTUP_AUDIT.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "docs/refactor/04_REGRESSION_RESULTS.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "docs/refactor/05_REFACTOR_FINAL_DECISION.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "docs/release/FILE_INVENTORY.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "docs/release/FINAL_GITHUB_AUDIT.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "docs/release/GITHUB_PUBLICATION_CHECKLIST.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "docs/release/GITHUB_PUBLICATION_REPORT.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "docs/release/RELEASE_MANIFEST.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "docs/security.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "docs/testing.md": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "documents/demo_ops_manual.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "evaluation/__init__.py": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "scripts/check_package_layout.py": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/dependency-audit.json": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/final-audit-runtime.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/final-audit.json": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/model-checks.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/offline-regression.json": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/publication-scan.json": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/recovery-tests.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/after/summary.json": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/after/test_error_classification.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/after/test_eval_regression.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/after/test_eval_robustness.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/after/test_eval_scoring.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/after/test_hitl.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/after/test_observability.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/after/test_postgres_store.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/after/test_rca.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/after/test_recovery.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/after/test_redis_degradation.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/after/test_trace_wiring.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/after/test_workflow_interrupt.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/before/summary.json": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/before/test_error_classification.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/before/test_eval_regression.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/before/test_eval_robustness.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/before/test_eval_scoring.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/before/test_hitl.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/before/test_observability.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/before/test_postgres_store.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/before/test_rca.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/before/test_recovery.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/before/test_redis_degradation.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/before/test_trace_wiring.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/before/test_workflow_interrupt.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/imports.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/index.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/infra-backup.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/infra-compose.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/infra-health.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/infra-restart.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/infra-seed.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/infra-status.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/infra-stop-before-restart.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/infra-stop.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/infra-up.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/infra-verify-backup.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/infra-verify.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/initial-migration/summary.json": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/initial-migration/test_error_classification.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/initial-migration/test_eval_regression.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/initial-migration/test_eval_robustness.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/initial-migration/test_eval_scoring.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/initial-migration/test_hitl.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/initial-migration/test_observability.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/initial-migration/test_postgres_store.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/initial-migration/test_rca.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/initial-migration/test_recovery.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/initial-migration/test_redis_degradation.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/initial-migration/test_trace_wiring.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/initial-migration/test_workflow_interrupt.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/mcp.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/package.json": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/rag.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/restore.json": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/safety.json": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/semantic-parity.json": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/trace.json": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/runtime-smoke.txt": {
+    "source": "package-layout refactor",
+    "change": "package initializer, verification, current documentation or integration probe"
+  },
+  "verification/refactor/zip-compose.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-index.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-init.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-offline.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-rag.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-tests/summary.json": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-tests/test_error_classification.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-tests/test_eval_regression.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-tests/test_eval_robustness.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-tests/test_eval_scoring.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-tests/test_hitl.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-tests/test_observability.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-tests/test_postgres_store.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-tests/test_rca.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-tests/test_recovery.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-tests/test_redis_degradation.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-tests/test_trace_wiring.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "verification/refactor/zip-tests/test_workflow_interrupt.txt": {
+    "source": "package-layout verification",
+    "change": "relocated release verification evidence"
+  },
+  "docs/refactor/06_GIT_COMMIT_AUDIT.md": {
+    "source": "final local commit audit",
+    "change": "Fresh audit results; no application or test code changed"
+  },
+  "verification/refactor/commit-audit.json": {
+    "source": "final local commit audit",
+    "change": "Fresh audit results; no application or test code changed"
   }
 }

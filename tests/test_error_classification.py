@@ -1,6 +1,6 @@
 """Dependency classifications only: no model imports, sockets or credentials."""
 import unittest
-from recovery import classify_error
+from app.agent.recovery import classify_error
 from langgraph.errors import GraphInterrupt
 from psycopg import OperationalError
 from redis.exceptions import ConnectionError as RedisConnectionError, TimeoutError as RedisTimeoutError

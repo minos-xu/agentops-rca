@@ -1,0 +1,142 @@
+{
+  "audit_date": "2026-11-23",
+  "branch": "refactor/package-layout",
+  "baseline": "dc7dc3337da9627a5a3c10f3a76144c272bfa37f",
+  "python": "3.12.14",
+  "fresh_checks": [
+    {
+      "name": "offline",
+      "exit_code": 0,
+      "seconds": 30.689
+    },
+    {
+      "name": "rag",
+      "exit_code": 0,
+      "seconds": 14.921
+    },
+    {
+      "name": "mcp",
+      "exit_code": 0,
+      "seconds": 19.921
+    },
+    {
+      "name": "imports",
+      "exit_code": 0,
+      "seconds": 14.423
+    }
+  ],
+  "fresh_offline_results": [
+    {
+      "test": "test_hitl.py",
+      "log_file": "test_hitl.txt",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_workflow_interrupt.py",
+      "log_file": "test_workflow_interrupt.txt",
+      "exit_code": 0,
+      "seconds": 1.568
+    },
+    {
+      "test": "test_rca.py",
+      "log_file": "test_rca.txt",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_postgres_store.py",
+      "log_file": "test_postgres_store.txt",
+      "exit_code": 0,
+      "seconds": 0.114
+    },
+    {
+      "test": "test_redis_degradation.py",
+      "log_file": "test_redis_degradation.txt",
+      "exit_code": 0,
+      "seconds": 0.215
+    },
+    {
+      "test": "test_eval_regression.py",
+      "log_file": "test_eval_regression.txt",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_eval_scoring.py",
+      "log_file": "test_eval_scoring.txt",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_eval_robustness.py",
+      "log_file": "test_eval_robustness.txt",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_observability.py",
+      "log_file": "test_observability.txt",
+      "exit_code": 0,
+      "seconds": 14.999
+    },
+    {
+      "test": "test_trace_wiring.py",
+      "log_file": "test_trace_wiring.txt",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_error_classification.py",
+      "log_file": "test_error_classification.txt",
+      "exit_code": 0,
+      "seconds": 1.168
+    },
+    {
+      "test": "test_recovery.py",
+      "log_file": "test_recovery.txt",
+      "exit_code": 0,
+      "seconds": 12.093
+    }
+  ],
+  "network_connections_allowed_in_regression": false,
+  "existing_env_or_data_copied": false,
+  "test_harness_adjustments_preserved": [
+    {
+      "test": "test_recovery.py::Recovery.test_real_saver_failure_preserves_pending_checkpoint",
+      "change": "Temporary FaultSaver uses a shared fault-flag dict across shallow clones; all assertions and strict msgpack remain enabled.",
+      "reason": "LangGraph 1.2.16 / checkpoint 4.3.0 derives a strict-serde saver clone; original boolean flag updates target the unused saver instance.",
+      "source_test_modified_by_runner": false
+    }
+  ],
+  "history_blobs_scanned": 101,
+  "secret_findings": [],
+  "largest_pre_audit_file_bytes": 40627,
+  "business_ast_parity_rechecked": {
+    "context_manager.py": true,
+    "hitl.py": true,
+    "incident_mock_data.py": true,
+    "memory_store.py": true,
+    "observability.py": true,
+    "postgres_store.py": true,
+    "rag_pipeline.py": true,
+    "rca_core.py": true,
+    "recovery.py": true,
+    "redis_store.py": true,
+    "reranker.py": true,
+    "retriever.py": true,
+    "workflow.AgentState": true,
+    "workflow.create_graph": true
+  },
+  "prompts_and_all_test_assertions_unchanged": true,
+  "historical_evidence_rechecked": [
+    "verification/refactor/infra-seed.txt",
+    "verification/refactor/infra-verify.txt",
+    "verification/refactor/infra-backup.txt",
+    "verification/refactor/restore.json",
+    "verification/refactor/trace.json",
+    "verification/refactor/package.json"
+  ],
+  "history_not_rerun": "No Docker operations, database connections, restore or live DeepSeek in this audit.",
+  "log_policy": "Keep prior 194-file evidence set; publish this compact summary only. Fresh raw logs remain local in /tmp, not staged."
+}

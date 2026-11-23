@@ -1,0 +1,83 @@
+
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 71/71 [00:00<00:00, 2416.64it/s]
+test_dependency_failure_and_rate_limiter (__main__.HTTPFaults.test_dependency_failure_and_rate_limiter) ... ok
+test_cancellation_never_retried (__main__.Recovery.test_cancellation_never_retried) ... ok
+test_checkpoint_read_write_no_success_or_replay (__main__.Recovery.test_checkpoint_read_write_no_success_or_replay) ... ok
+test_classification (__main__.Recovery.test_classification) ... ok
+test_durable_insert_and_reset_failure (__main__.Recovery.test_durable_insert_and_reset_failure) ... ok
+test_failed_read_node_resume_does_not_repeat_prior_nodes (__main__.Recovery.test_failed_read_node_resume_does_not_repeat_prior_nodes) ... ok
+test_hitl_reject_repeat_guard (__main__.Recovery.test_hitl_reject_repeat_guard) ...
+[Node] Retrieve Memory
+[Memory] no relevant memory
+
+[Node] Incident Planner
+[Planner] incident=INC-001
+[Planner] tools=['get_service_metrics', 'search_logs', 'query_traces', 'get_service_topology']
+
+[Node] Collect Telemetry via MCP
+[Telemetry MCP] get_service_metrics(INC-001) -> OK
+[Telemetry MCP] search_logs(INC-001) -> OK
+[Telemetry MCP] query_traces(INC-001) -> OK
+[Telemetry MCP] get_service_topology(INC-001) -> OK
+
+[Node] Structured RCA
+[Evidence] incident=INC-001, facts=22
+[Evidence] get_service_metrics: OK
+[Evidence] search_logs: OK
+[Evidence] query_traces: OK
+[Evidence] get_service_topology: OK
+[RCA] status=prioritized_hypothesis, validation=passed, hypotheses=1
+
+[Node] Prepare Simulation Proposal
+[HITL] action_id=SIM-57BB7F3CD018 action=simulate_payment_restart, mode=synthetic_dry_run
+[Node] Human Approval: waiting for SIM-57BB7F3CD018
+[Node] Human Approval: waiting for SIM-57BB7F3CD018
+[HITL] decision=rejected, action_id=SIM-57BB7F3CD018
+
+[Node] Approval Rejected
+[HITL] rejected action_id=SIM-57BB7F3CD018
+ok
+test_llm_rate_limit_only_retry (__main__.Recovery.test_llm_rate_limit_only_retry) ... ok
+test_llm_timeout_permanent_and_sdk_budget (__main__.Recovery.test_llm_timeout_permanent_and_sdk_budget) ... ok
+test_mcp_connect_cleanup (__main__.Recovery.test_mcp_connect_cleanup) ... [MCP] connecting offline
+ok
+test_mcp_protocol_and_invalid_data (__main__.Recovery.test_mcp_protocol_and_invalid_data) ... ok
+test_mcp_timeout_bound (__main__.Recovery.test_mcp_timeout_bound) ... ok
+test_partial_evidence_real_graph (__main__.Recovery.test_partial_evidence_real_graph) ...
+[Node] Retrieve Memory
+[Memory] no relevant memory
+
+[Node] Incident Planner
+[Planner] incident=INC-001
+[Planner] tools=['get_service_metrics', 'search_logs', 'query_traces', 'get_service_topology']
+
+[Node] Collect Telemetry via MCP
+[Telemetry MCP] get_service_metrics(INC-001) -> OK
+[Telemetry MCP] search_logs(INC-001) -> ERROR: RuntimeError
+[Telemetry MCP] query_traces(INC-001) -> OK
+[Telemetry MCP] get_service_topology(INC-001) -> OK
+
+[Node] Structured RCA
+[Evidence] incident=INC-001, facts=19
+[Evidence] get_service_metrics: OK
+[Evidence] search_logs: MISSING
+[Evidence] query_traces: OK
+[Evidence] get_service_topology: OK
+[RCA] 校验失败，最多重生成一次：RCAValidationError
+[RCA] 校验或生成失败，保守降级：RCAValidationError
+[RCA] status=insufficient_evidence, validation=fallback, hypotheses=0
+
+[Node] Prepare Simulation Proposal
+[HITL] no proposal: evidence insufficient or report invalid
+ok
+test_postgres_start_failure_no_memory_fallback (__main__.Recovery.test_postgres_start_failure_no_memory_fallback) ... ok
+test_real_saver_failure_preserves_pending_checkpoint (__main__.Recovery.test_real_saver_failure_preserves_pending_checkpoint) ... ok
+test_retry_exhaustion (__main__.Recovery.test_retry_exhaustion) ... ok
+test_transient_recovery_and_trace (__main__.Recovery.test_transient_recovery_and_trace) ... ok
+test_unsafe_no_retry (__main__.Recovery.test_unsafe_no_retry) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.761s
+
+OK

@@ -74,8 +74,7 @@ def main() -> int:
     results = []
     with tempfile.TemporaryDirectory(prefix="agentops-public-regression-") as directory:
         snapshot = Path(directory)
-        for source in ROOT.glob("*.py"):
-            shutil.copy2(source, snapshot / source.name)
+        shutil.copytree(ROOT / "app", snapshot / "app", ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
         shutil.copytree(ROOT / "evaluation", snapshot / "evaluation", ignore=shutil.ignore_patterns('__pycache__'))
         shutil.copy2(ROOT / "tests" / "fixtures" / "trace_api.py", snapshot / "trace_api.py")
         for name in TESTS:
@@ -124,7 +123,7 @@ def main() -> int:
         env["PYTHONPATH"] = str(snapshot)
         for name in TESTS:
             started = time.monotonic()
-            with (output / f"{Path(name).stem}.log").open("w", encoding="utf-8") as log:
+            with (output / f"{Path(name).stem}.txt").open("w", encoding="utf-8") as log:
                 try:
                     process = subprocess.run(
                         [sys.executable, name], cwd=snapshot, env=env,
@@ -135,7 +134,7 @@ def main() -> int:
                 except subprocess.TimeoutExpired:
                     log.write(f"\nTimeout after {args.timeout} seconds\n")
                     code = 124
-            result = {"test": name, "exit_code": code, "seconds": round(time.monotonic() - started, 3)}
+            result = {"test": name, "log_file": f"{Path(name).stem}.txt", "exit_code": code, "seconds": round(time.monotonic() - started, 3)}
             results.append(result)
             print(f"{name}: {'PASS' if code == 0 else 'FAIL'}", flush=True)
     summary = {

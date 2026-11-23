@@ -44,7 +44,7 @@ flowchart LR
   G --> L[DeepSeek API · live mode]
 ```
 
-**事故请求路径**：客户端 → FastAPI → Runtime 限流与会话检查 → LangGraph → 只读 MCP 证据 → RCA 校验 → 结束或 HITL 暂停 → Checkpoint / 模拟审计。普通问题可以进入 RAG 或通用工具分支。 [架构与模块说明](ARCHITECTURE.md)
+**事故请求路径**：客户端 → FastAPI → Runtime 限流与会话检查 → LangGraph → 只读 MCP 证据 → RCA 校验 → 结束或 HITL 暂停 → Checkpoint / 模拟审计。普通问题可以进入 RAG 或通用工具分支。 [架构与模块说明](docs/architecture.md)
 
 ## Quick start
 
@@ -60,7 +60,7 @@ bash scripts/manage.sh up --offline
 bash scripts/manage.sh health
 ```
 
-`index` 从公开的合成知识库重建索引。PostgreSQL 和 Redis 由 Compose 启动，FastAPI、LangGraph 和 MCP 在宿主机运行。Dockerfile 构建 Redis 镜像。`--offline` 验收无需 DeepSeek Key，可验证健康检查、工具和状态持久化。生成 RCA 或 RAG 最终回答需要在本机配置 `DEEPSEEK_API_KEY`，然后以在线模式启动。使用 `bash scripts/manage.sh stop` 停止服务并保留数据。 [完整部署步骤](DEPLOYMENT.md)
+`index` 从公开的合成知识库重建索引。PostgreSQL 和 Redis 由 Compose 启动，FastAPI、LangGraph 和 MCP 在宿主机运行。Dockerfile 构建 Redis 镜像。`--offline` 验收无需 DeepSeek Key，可验证健康检查、工具和状态持久化。生成 RCA 或 RAG 最终回答需要在本机配置 `DEEPSEEK_API_KEY`，然后以在线模式启动。使用 `bash scripts/manage.sh stop` 停止服务并保留数据。 [完整部署步骤](docs/deployment.md)
 
 ### API examples
 
@@ -82,7 +82,7 @@ bash scripts/manage.sh test
 - **真实基础设施验收**。使用独立 Compose 项目验证 PostgreSQL、Redis、HTTP、MCP 启动和 Checkpoint 重启恢复。测试状态由探针写入 Saver。
 - **历史 DeepSeek 验证**。早期版本曾用真实 DeepSeek 调查合成事故。公开整理阶段调用的是离线测试或不依赖模型的真实基础设施探针。
 
-具体证据与复现命令见 [测试说明](TESTING.md) 和 [最终发布审计](FINAL_GITHUB_AUDIT.md)。
+具体证据与复现命令见 [测试说明](docs/testing.md) 和 [最终发布审计](docs/release/FINAL_GITHUB_AUDIT.md)。
 
 ## Limitations
 
@@ -91,3 +91,32 @@ bash scripts/manage.sh test
 ## License
 
 项目自有或获授权部分使用 [MIT](LICENSE)。依赖、镜像和模型遵循 [各自的上游许可](THIRD_PARTY_NOTICES.md)。
+
+## Package layout
+
+```text
+app/
+  app.main.py       # 唯一正式 FastAPI 入口 app.main:app
+  api/          # HTTP 路由与请求校验
+  core/         # 环境配置、稳定项目根路径、上下文预算
+  agent/        # Runtime 继承链、LangGraph 工作流、HITL、Recovery
+  rca/          # 证据规则与合成事故数据
+  tools/        # MCP Client / Server / STDIO 脱敏启动器
+  rag/          # 文档、Embedding、索引、检索、重排、生成
+  memory/       # 长期 Memory 与检索配置
+  storage/      # PostgreSQL / Redis 适配
+  telemetry/    # Collector、Trace Callback 与报告
+ evaluation/    # 独立评分与鲁棒性规则（不进入在线工作流）
+ tests/         # 12 组离线回归与夹具
+ scripts/       # 运维、索引、回归、真实工具探针和发布打包
+ docs/          # 架构、部署、测试、安全与保留的发布证据
+ verification/  # 已脱敏的验证证据
+ documents/     # 公开合成知识库；本地生成的索引不提交
+```
+
+启动仍采用宿主机 API/MCP + Docker 数据服务；没有增加服务或新依赖。
+模块启动示例：`python -m uvicorn app.main:app --host 127.0.0.1 --port 8164 --workers 1`。
+知识库重建使用 `bash scripts/manage.sh index`，模块命令为 `python -m app.rag.ingest`。
+跨目录运维可执行 `/absolute/path/to/project/scripts/manage.sh`；MCP 显式以项目根为 cwd 启动包模块。
+部署的 Memory/Trace 继续使用既有目录名，不需要迁移数据库或重写 Checkpoint。
+完整重构及验收结论见 [重构报告](docs/refactor/05_REFACTOR_FINAL_DECISION.md)。

@@ -1,0 +1,14 @@
+
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 71/71 [00:00<00:00, 4058.93it/s]
+
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]
+Loading weights:  87%|████████▋ | 342/393 [00:00<00:00, 3405.65it/s]
+Loading weights: 100%|██████████| 393/393 [00:00<00:00, 3535.87it/s]
+PASS: real rag STDIO discovery/close
+PASS: real utility STDIO discovery/close and calculator call
+[MCP Observability] discovered get_service_metrics
+[MCP Observability] discovered get_service_topology
+[MCP Observability] discovered query_traces
+[MCP Observability] discovered search_logs
+PASS: real observability STDIO, four synthetic tool calls and safe close; no production telemetry.

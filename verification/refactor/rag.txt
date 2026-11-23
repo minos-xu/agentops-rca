@@ -1,0 +1,9 @@
+
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 71/71 [00:00<00:00, 4213.59it/s]
+
+Loading weights:   0%|          | 0/393 [00:00<?, ?it/s]
+Loading weights:  48%|████▊     | 188/393 [00:00<00:00, 1879.47it/s]
+Loading weights:  96%|█████████▌| 376/393 [00:00<00:00, 1550.99it/s]
+Loading weights: 100%|██████████| 393/393 [00:00<00:00, 1637.74it/s]
+PASS: synthetic documents, real embedding/FAISS/reranker; mocked empty-evidence branch; no LLM.

@@ -6,15 +6,15 @@ from pathlib import Path
 from types import SimpleNamespace as NS
 from unittest.mock import AsyncMock, patch
 import psycopg
-from recovery import bounded_call, classify_error
-from observability import observability as obs
-from workflow import create_graph, tracked_chat_completion
-from hitl import SimulationAudit
-from runtime import AgentOpsRuntime, APIProblem
-from postgres_runtime import PostgresAgentOpsRuntime
-from redis_runtime import RedisPostgresAgentOpsRuntime
-from main import create_recovery_app
-from observability_mcp_client import query_observability_tool
+from app.agent.recovery import bounded_call, classify_error
+from app.telemetry.observability import observability as obs
+from app.agent.workflow import create_graph, tracked_chat_completion
+from app.agent.hitl import SimulationAudit
+from app.agent.runtime import AgentOpsRuntime, APIProblem
+from app.agent.postgres_runtime import PostgresAgentOpsRuntime
+from app.agent.redis_runtime import RedisPostgresAgentOpsRuntime
+from app.main import create_recovery_app
+from app.tools.observability_mcp_client import query_observability_tool
 from langgraph.checkpoint.memory import InMemorySaver
 from langchain_core.messages import HumanMessage
 
@@ -78,7 +78,7 @@ class Recovery(unittest.IsolatedAsyncioTestCase):
         class Rejected(Exception): status_code=429
         create=AsyncMock(side_effect=[Rejected(),NS(usage=None)])
         client=NS(chat=NS(completions=NS(create=create)))
-        with patch('recovery.asyncio.sleep',new=AsyncMock()):
+        with patch('app.agent.recovery.asyncio.sleep',new=AsyncMock()):
             reply=await tracked_chat_completion(client,'planner',model='deepseek-chat')
         self.assertIsNone(reply.usage); self.assertEqual(create.await_count,2)
         self.assertEqual(obs.summary('system')['llm_call_count'],2)
@@ -93,14 +93,14 @@ class Recovery(unittest.IsolatedAsyncioTestCase):
     async def test_mcp_timeout_bound(self):
         async def blocked(*args): await asyncio.Event().wait()
         call=AsyncMock(side_effect=blocked)
-        with patch('observability_mcp_client.MCP_TIMEOUT_SECONDS',.001):
+        with patch('app.tools.observability_mcp_client.MCP_TIMEOUT_SECONDS',.001):
             with self.assertRaises(TimeoutError):
                 await query_observability_tool(NS(call_tool=call),'search_logs','INC-001')
         self.assertEqual(call.await_count,2)
         self.assertEqual(obs.summary('system')['tool_error_count'],1)
 
     async def test_mcp_connect_cleanup(self):
-        from mcp_tool_runtime import MCPToolRuntime
+        from app.tools.mcp_tool_runtime import MCPToolRuntime
         runtime=MCPToolRuntime({'offline':object()})
         runtime.stack.enter_async_context=AsyncMock(side_effect=ConnectionError('SECRET'))
         runtime.stack.aclose=AsyncMock()
@@ -109,7 +109,7 @@ class Recovery(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(runtime.tool_clients,{})
 
     async def test_partial_evidence_real_graph(self):
-        from incident_mock_data import query_telemetry
+        from app.rca.incident_mock_data import query_telemetry
         async def tool(name,args):
             if name=='search_logs': return NS(is_error=True,content=[])
             return NS(is_error=False,structured_content=query_telemetry(name,args['incident_id']))
@@ -151,8 +151,8 @@ class Recovery(unittest.IsolatedAsyncioTestCase):
     async def test_hitl_reject_repeat_guard(self):
         import json
         from test_rca import catalog_for, valid_result
-        from incident_mock_data import query_telemetry
-        from trace_callback import TraceCallback
+        from app.rca.incident_mock_data import query_telemetry
+        from app.telemetry.trace_callback import TraceCallback
         with tempfile.TemporaryDirectory() as tmp:
             audit=SimulationAudit(Path(tmp)/'audit')
             runtime=AgentOpsRuntime(); runtime.sessions['sid']='hitl'; runtime.graph=create_graph(

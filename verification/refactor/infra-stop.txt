@@ -1,0 +1,9 @@
+Isolated project agentops-rca-layout-20261123; ports 58432/58479/8264.
+ Container agentops-rca-layout-20261123-redis-1 Stopping
+ Container agentops-rca-layout-20261123-redis-1 Stopped
+ Container agentops-rca-layout-20261123-postgres-1 Stopping
+ Container agentops-rca-layout-20261123-postgres-1 Stopped
+API and its managed MCP children stopped.
+Services stopped; named PostgreSQL volume and host data retained.
+
+exit_code: 0

@@ -1,0 +1,23 @@
+[PASS] request, node, tool and LLM usage share one trace
+[PASS] session correlation is preserved
+[PASS] request duration is measured
+[PASS] node and tool spans are counted
+[PASS] LLM token usage is aggregated
+[PASS] tool exception is recorded as an error
+[PASS] exception type is retained
+[PASS] unsafe metadata is discarded
+[PASS] concurrent requests receive distinct trace IDs
+[PASS] first trace does not mix sessions
+[PASS] second trace does not mix sessions
+[PASS] startup span is recorded outside a request
+[PASS] event storage is bounded to configured capacity
+[PASS] snapshot respects bounded storage
+[PASS] interrupt MRO classification preserves propagation and excludes error messages
+
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 71/71 [00:00<00:00, 4054.18it/s]
+[PASS] LLM calls, real provider usage fields, retry metadata and API failures are recorded safely
+[PASS] both MCP paths record successes, exceptions and protocol errors without logging payloads
+[PASS] concurrent callback, LLM and MCP events retain their own session context
+[PASS] storage failures preserve results, original exceptions and ContextVar cleanup
+ALL LESSON 62 OBSERVABILITY TESTS PASSED

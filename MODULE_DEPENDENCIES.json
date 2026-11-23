@@ -1,172 +1,256 @@
 {
   "local_imports": {
-    "answerability": [
-      "config",
-      "eval_dataset",
-      "reranker",
-      "retriever"
+    "app.__init__": [],
+    "app.agent.__init__": [],
+    "app.agent.hitl": [],
+    "app.agent.postgres_runtime": [
+      "app.agent.runtime",
+      "app.agent.workflow",
+      "app.core.deployment_config",
+      "app.memory.memory_config",
+      "app.memory.memory_retriever",
+      "app.memory.memory_store",
+      "app.storage.postgres_store",
+      "app.tools.mcp_tool_runtime",
+      "app.tools.observability_mcp_client"
     ],
-    "api_routes": [
-      "redis_runtime",
-      "runtime"
+    "app.agent.recovery": [
+      "app.telemetry.observability"
     ],
-    "bm25_store": [
-      "chunker"
+    "app.agent.redis_runtime": [
+      "app.agent.postgres_runtime",
+      "app.agent.runtime",
+      "app.storage.redis_store"
     ],
-    "chunker": [],
-    "config": [
-      "deployment_config"
+    "app.agent.runtime": [
+      "app.agent.hitl",
+      "app.agent.workflow",
+      "app.core.deployment_config",
+      "app.memory.memory_config",
+      "app.memory.memory_retriever",
+      "app.memory.memory_store",
+      "app.rca.incident_mock_data",
+      "app.tools.mcp_tool_runtime",
+      "app.tools.observability_mcp_client"
     ],
-    "context_manager": [],
-    "deployment_config": [],
-    "embedder": [
-      "config"
+    "app.agent.traced_runtime": [
+      "app.agent.redis_runtime",
+      "app.core.deployment_config",
+      "app.telemetry.observability",
+      "app.telemetry.trace_callback"
     ],
-    "embedding_store": [],
-    "eval_dataset": [],
-    "filters": [],
-    "generator": [
-      "config"
+    "app.agent.workflow": [
+      "app.agent.hitl",
+      "app.agent.recovery",
+      "app.core.context_manager",
+      "app.core.deployment_config",
+      "app.memory.memory_config",
+      "app.memory.memory_retriever",
+      "app.memory.memory_store",
+      "app.rca.incident_mock_data",
+      "app.rca.rca_core",
+      "app.telemetry.observability",
+      "app.tools.mcp_tool_runtime",
+      "app.tools.observability_mcp_client"
     ],
-    "hitl": [],
-    "incident_mock_data": [],
-    "ingest": [
-      "bm25_store",
-      "chunker",
-      "config",
-      "embedder",
-      "embedding_store",
-      "loader",
-      "vector_store"
+    "app.api.__init__": [],
+    "app.api.routes": [
+      "app.agent.redis_runtime",
+      "app.agent.runtime"
     ],
-    "loader": [],
-    "main": [
-      "api_routes",
-      "traced_runtime"
+    "app.core.__init__": [],
+    "app.core.config": [
+      "app.core.deployment_config"
     ],
-    "mcp_stdio_launcher": [
-      "deployment_config"
+    "app.core.context_manager": [],
+    "app.core.deployment_config": [],
+    "app.main": [
+      "app.agent.traced_runtime",
+      "app.api.routes"
     ],
-    "mcp_tool_runtime": [
-      "observability",
-      "recovery"
+    "app.memory.__init__": [],
+    "app.memory.memory_config": [
+      "app.core.deployment_config",
+      "app.memory.memory_store",
+      "app.tools.tool_config"
     ],
-    "memory_config": [
-      "deployment_config",
-      "memory_store",
-      "tool_config"
+    "app.memory.memory_retriever": [
+      "app.memory.memory_store",
+      "app.rag.embedder"
     ],
-    "memory_retriever": [
-      "embedder",
-      "memory_store"
+    "app.memory.memory_store": [],
+    "app.rag.__init__": [],
+    "app.rag.answerability": [
+      "app.core.config",
+      "app.rag.eval_dataset",
+      "app.rag.reranker",
+      "app.rag.retriever"
     ],
-    "memory_store": [],
-    "observability": [],
-    "observability_mcp_client": [
-      "observability",
-      "recovery"
+    "app.rag.bm25_store": [
+      "app.core.deployment_config",
+      "app.rag.chunker"
     ],
-    "observability_mcp_server": [
-      "incident_mock_data"
+    "app.rag.chunker": [],
+    "app.rag.embedder": [
+      "app.core.config"
     ],
-    "postgres_runtime": [
-      "mcp_tool_runtime",
-      "memory_config",
-      "memory_retriever",
-      "memory_store",
-      "observability_mcp_client",
-      "postgres_store",
-      "runtime",
-      "workflow"
+    "app.rag.embedding_store": [
+      "app.core.deployment_config"
     ],
-    "postgres_store": [
-      "hitl"
+    "app.rag.eval_dataset": [],
+    "app.rag.filters": [],
+    "app.rag.generator": [
+      "app.core.config"
     ],
-    "rag_mcp_server": [
-      "rag_pipeline"
+    "app.rag.ingest": [
+      "app.core.config",
+      "app.rag.bm25_store",
+      "app.rag.chunker",
+      "app.rag.embedder",
+      "app.rag.embedding_store",
+      "app.rag.loader",
+      "app.rag.vector_store"
     ],
-    "rag_pipeline": [
-      "answerability",
-      "generator",
-      "reranker",
-      "retriever"
+    "app.rag.loader": [
+      "app.core.deployment_config"
     ],
-    "rca_core": [],
-    "recovery": [
-      "observability"
+    "app.rag.rag_pipeline": [
+      "app.rag.answerability",
+      "app.rag.generator",
+      "app.rag.reranker",
+      "app.rag.retriever"
     ],
-    "redis_runtime": [
-      "postgres_runtime",
-      "redis_store",
-      "runtime"
+    "app.rag.reranker": [],
+    "app.rag.retriever": [
+      "app.rag.embedder",
+      "app.rag.embedding_store",
+      "app.rag.filters",
+      "app.rag.vector_store"
     ],
-    "redis_store": [],
-    "reranker": [],
-    "retriever": [
-      "embedder",
-      "embedding_store",
-      "filters",
-      "vector_store"
+    "app.rag.vector_store": [
+      "app.core.config"
     ],
-    "runtime": [
-      "hitl",
-      "incident_mock_data",
-      "mcp_tool_runtime",
-      "memory_config",
-      "memory_retriever",
-      "memory_store",
-      "observability_mcp_client",
-      "workflow"
+    "app.rca.__init__": [],
+    "app.rca.incident_mock_data": [],
+    "app.rca.rca_core": [],
+    "app.storage.__init__": [],
+    "app.storage.postgres_store": [
+      "app.agent.hitl"
     ],
-    "tool_config": [
-      "deployment_config"
+    "app.storage.redis_store": [],
+    "app.telemetry.__init__": [],
+    "app.telemetry.observability": [],
+    "app.telemetry.trace_callback": [
+      "app.telemetry.observability"
     ],
-    "trace_callback": [
-      "observability"
+    "app.telemetry.trace_report": [
+      "app.core.deployment_config"
     ],
-    "trace_report": [
-      "deployment_config"
+    "app.tools.__init__": [],
+    "app.tools.mcp_stdio_launcher": [
+      "app.core.deployment_config"
     ],
-    "traced_runtime": [
-      "deployment_config",
-      "observability",
-      "redis_runtime",
-      "trace_callback"
+    "app.tools.mcp_tool_runtime": [
+      "app.agent.recovery",
+      "app.telemetry.observability"
     ],
-    "utility_mcp_server": [],
-    "vector_store": [
-      "config"
+    "app.tools.observability_mcp_client": [
+      "app.agent.recovery",
+      "app.telemetry.observability"
     ],
-    "workflow": [
-      "context_manager",
-      "hitl",
-      "incident_mock_data",
-      "mcp_tool_runtime",
-      "memory_config",
-      "memory_retriever",
-      "memory_store",
-      "observability",
-      "observability_mcp_client",
-      "rca_core",
-      "recovery"
+    "app.tools.observability_mcp_server": [
+      "app.rca.incident_mock_data"
+    ],
+    "app.tools.rag_mcp_server": [
+      "app.rag.rag_pipeline"
+    ],
+    "app.tools.tool_config": [
+      "app.core.deployment_config"
+    ],
+    "app.tools.utility_mcp_server": [],
+    "evaluation.__init__": [],
+    "evaluation.eval_regression": [],
+    "evaluation.eval_robustness": [],
+    "evaluation.eval_scoring": [],
+    "scripts.check_package_layout": [
+      "app.core.config",
+      "app.rag.embedder",
+      "app.rag.loader",
+      "app.rag.rag_pipeline",
+      "app.rag.reranker",
+      "app.rag.retriever",
+      "app.tools.observability_mcp_client",
+      "app.tools.tool_config"
+    ],
+    "scripts.deployment_probe": [
+      "app.storage.redis_store"
+    ],
+    "scripts.manage": [],
+    "scripts.package_release": [],
+    "scripts.run_tests": [],
+    "scripts.verify_models": [],
+    "tests.fixtures.trace_api": [
+      "app.agent.traced_runtime",
+      "app.api.routes"
+    ],
+    "tests.test_error_classification": [
+      "app.agent.recovery"
+    ],
+    "tests.test_eval_regression": [
+      "evaluation.eval_regression"
+    ],
+    "tests.test_eval_robustness": [
+      "evaluation.eval_robustness"
+    ],
+    "tests.test_eval_scoring": [
+      "evaluation.eval_scoring"
+    ],
+    "tests.test_hitl": [
+      "app.agent.hitl"
+    ],
+    "tests.test_observability": [
+      "app.agent.workflow",
+      "app.telemetry.observability",
+      "app.telemetry.trace_callback",
+      "app.tools.mcp_tool_runtime",
+      "app.tools.observability_mcp_client"
+    ],
+    "tests.test_postgres_store": [
+      "app.agent.hitl",
+      "app.storage.postgres_store"
+    ],
+    "tests.test_rca": [
+      "app.rca.incident_mock_data",
+      "app.rca.rca_core"
+    ],
+    "tests.test_recovery": [
+      "app.agent.hitl",
+      "app.agent.postgres_runtime",
+      "app.agent.recovery",
+      "app.agent.redis_runtime",
+      "app.agent.runtime",
+      "app.agent.workflow",
+      "app.main",
+      "app.rca.incident_mock_data",
+      "app.telemetry.observability",
+      "app.telemetry.trace_callback",
+      "app.tools.mcp_tool_runtime",
+      "app.tools.observability_mcp_client"
+    ],
+    "tests.test_redis_degradation": [
+      "app.agent.redis_runtime",
+      "app.agent.runtime"
+    ],
+    "tests.test_trace_wiring": [],
+    "tests.test_workflow_interrupt": [
+      "app.agent.hitl"
     ]
   },
-  "dynamic_entry_points": {
-    "uvicorn": "main:app",
-    "stdio": [
-      "mcp_stdio_launcher.py → rag_mcp_server.py",
-      "utility_mcp_server.py",
-      "observability_mcp_server.py"
-    ],
-    "management": [
-      "scripts/manage.sh → scripts/manage.py",
-      "scripts/manage.py → ingest.py / deployment_probe.py / run_tests.py / package_release.py"
-    ]
-  },
-  "generated_data": [
-    "vector.index",
-    "metadata.json",
-    "embedding_store.pkl",
-    "bm25_store.pkl"
+  "entrypoint": "app.main:app",
+  "mcp_entrypoints": [
+    "app.tools.mcp_stdio_launcher",
+    "app.tools.rag_mcp_server",
+    "app.tools.utility_mcp_server",
+    "app.tools.observability_mcp_server"
   ]
 }

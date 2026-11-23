@@ -9,7 +9,7 @@ from uuid import uuid4
 from langgraph.graph import START, END, StateGraph
 from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.types import interrupt, Command
-from hitl import make_proposal, approval_decision, SimulationAudit
+from app.agent.hitl import make_proposal, approval_decision, SimulationAudit
 
 
 class State(TypedDict, total=False):

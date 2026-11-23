@@ -1,0 +1,4 @@
+Isolated project agentops-rca-layout-20261123; ports 58432/58479/8264.
+PASS: PostgreSQL SELECT 1, Redis PING, API /health (status=ok).
+
+exit_code: 0

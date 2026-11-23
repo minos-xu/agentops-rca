@@ -1,0 +1,8 @@
+[PASS] Redis rate limiter unavailable => HTTP 503 fail-closed
+[PASS] Unknown session remains HTTP 404
+[Lesson57] case cache read failed; falling back to source: ConnectionError
+[Lesson57] case cache write failed; returning source data: ConnectionError
+[PASS] Redis case cache unavailable => returns source data
+[PASS] Cache fallback path touched only the static case catalogue
+ALL LESSON 58 DEGRADATION TESTS PASSED
+Fault injection only: no DeepSeek/PostgreSQL/MCP/real remediation.

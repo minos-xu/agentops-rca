@@ -1,0 +1,6 @@
+[PASS] app/telemetry/trace_callback.py syntax
+[PASS] app/agent/traced_runtime.py syntax
+[PASS] trace_api.py syntax
+[PASS] app/telemetry/trace_report.py syntax
+[PASS] Original runtime delegates remain in place
+ALL LESSON 62 INTEGRATION OFFLINE CHECKS PASSED

@@ -3,8 +3,8 @@ from __future__ import annotations
 
 from copy import deepcopy
 
-from incident_mock_data import query_telemetry
-from rca_core import (
+from app.rca.incident_mock_data import query_telemetry
+from app.rca.rca_core import (
     TOOLS, make_evidence_catalog, validate_rca,
     RCAValidationError, insufficient_report, render_report, has_observed_mechanism_signal,
 )

@@ -1,0 +1,11 @@
+Isolated project agentops-rca-layout-20261123; ports 58432/58479/8264.
+PASS: real FastAPI /health and Redis dependency
+PASS: real Redis JSON cache, TTL and concurrent Lua rate limit (3 of 12 allowed)
+PASS: real API case catalogue matches the default-prefix Redis cache with a positive TTL
+PASS: real HTTP messages route returns 429 and valid Retry-After using the real Redis quota
+PASS: real PostgreSQL session mapping and synthetic AIMessage checkpoint
+PASS: identical session mapping, checkpoint id and message remain in PostgreSQL
+PASS: real HTTP session read returns persisted checkpoint message
+No DeepSeek calls; checkpoint content is a synthetic deployment probe, not a production RCA result.
+
+exit_code: 0

@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "kind": "same_host_relocated_release_zip",
+  "exact_allowlist_match": true,
+  "zip_integrity": true,
+  "private_credentials_scan": true,
+  "indexes_weights_runtime_data_excluded": true,
+  "checks": [
+    {
+      "probe": "init",
+      "exit_code": 0
+    },
+    {
+      "probe": "compose",
+      "exit_code": 0
+    },
+    {
+      "probe": "offline",
+      "exit_code": 0
+    },
+    {
+      "probe": "index",
+      "exit_code": 0
+    },
+    {
+      "probe": "rag",
+      "exit_code": 0
+    }
+  ],
+  "limitation": "Existing agent-dev and model cache reused; no fresh host installation or live DeepSeek.",
+  "final_source_matches_tested_archive": true,
+  "final_release_file_count": 194,
+  "final_zip": "agentops-rca-package-layout-final.zip"
+}

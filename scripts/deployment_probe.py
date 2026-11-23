@@ -69,7 +69,7 @@ def health(client: httpx.Client) -> None:
 
 
 async def redis_probe(redis_url: str, run_id: str) -> None:
-    from redis_store import Lesson57RedisStore
+    from app.storage.redis_store import Lesson57RedisStore
     store = Lesson57RedisStore(redis_url, prefix=f"agentops:lesson64:acceptance:{run_id}")
     try:
         assert await store.ping(), "Redis ping failed"
@@ -93,7 +93,7 @@ async def redis_probe(redis_url: str, run_id: str) -> None:
 
 
 async def verify_api_case_cache(redis_url: str, expected: list) -> None:
-    from redis_store import Lesson57RedisStore
+    from app.storage.redis_store import Lesson57RedisStore
     store = Lesson57RedisStore(redis_url)
     try:
         assert await store.get_json("cases:v1") == expected, "API catalogue is missing from its Redis cache"
@@ -105,7 +105,7 @@ async def verify_api_case_cache(redis_url: str, expected: list) -> None:
 
 
 async def fill_message_quota(redis_url: str, session_id: str, limit: int, window: int) -> None:
-    from redis_store import Lesson57RedisStore
+    from app.storage.redis_store import Lesson57RedisStore
     store = Lesson57RedisStore(redis_url)
     try:
         for expected in range(1, limit + 1):
@@ -116,7 +116,7 @@ async def fill_message_quota(redis_url: str, session_id: str, limit: int, window
 
 
 async def verify_message_quota(redis_url: str, session_id: str, expected: int) -> None:
-    from redis_store import Lesson57RedisStore
+    from app.storage.redis_store import Lesson57RedisStore
     store = Lesson57RedisStore(redis_url)
     try:
         key = store._key(f"rate:messages:{session_id}")

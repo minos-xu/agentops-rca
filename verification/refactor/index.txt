@@ -1,0 +1,10 @@
+
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 71/71 [00:00<00:00, 3827.56it/s]
+新增文档：demo_ops_manual.txt
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.796 seconds.
+Prefix dict has been built successfully.
+
+增量索引同步完成。

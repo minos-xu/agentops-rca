@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import tempfile
 from pathlib import Path
-from hitl import (
+from app.agent.hitl import (
     ApprovalError, SimulationAudit, make_proposal, approval_decision,
 )
 

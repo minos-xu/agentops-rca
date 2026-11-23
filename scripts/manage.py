@@ -169,8 +169,8 @@ def preflight(values, offline):
                 raise RuntimeError('API_PORT is already occupied; choose a free deployment port') from None
     if not offline and not values.get('DEEPSEEK_API_KEY'):
         raise RuntimeError('Set DEEPSEEK_API_KEY in .env.docker, or use up --offline for deployment acceptance')
-    for name in ('vector.index', 'metadata.json', 'embedding_store.pkl', 'rag_mcp_server.py',
-                 'utility_mcp_server.py', 'observability_mcp_server.py'):
+    for name in ('vector.index', 'metadata.json', 'embedding_store.pkl', 'app/tools/rag_mcp_server.py',
+                 'app/tools/utility_mcp_server.py', 'app/tools/observability_mcp_server.py'):
         if not (ROOT / name).is_file():
             raise RuntimeError('Missing required project asset: ' + name)
     if not Path(values['RERANKER_MODEL_PATH']).is_dir():
@@ -257,7 +257,7 @@ def serve():
         restrict(httpx)
         restrict(httpx2)
     import uvicorn
-    uvicorn.run('main:app', host='127.0.0.1', port=int(os.environ['API_PORT']),
+    uvicorn.run('app.main:app', host='127.0.0.1', port=int(os.environ['API_PORT']),
                 workers=1, access_log=False, log_level='info')
 
 
@@ -319,7 +319,7 @@ def main():
                 raise RuntimeError('Run index with the managed API stopped and no extra arguments')
             env = {**os.environ, **values, 'AGENTOPS_OFFLINE': '1',
                    'DEEPSEEK_API_KEY': 'offline-index-placeholder'}
-            subprocess.run([sys.executable, str(ROOT / 'ingest.py')], cwd=ROOT, env=env, check=True)
+            subprocess.run([sys.executable, '-m', 'app.rag.ingest'], cwd=ROOT, env=env, check=True)
         elif args.command == 'up':
             if any(arg != '--offline' for arg in args.args):
                 raise RuntimeError('up supports only --offline')

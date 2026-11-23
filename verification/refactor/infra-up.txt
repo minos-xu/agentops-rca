@@ -1,0 +1,67 @@
+Isolated project agentops-rca-layout-20261123; ports 58432/58479/8264.
+ Image agentops-rca-layout-20261123-redis:local Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 576B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 437B 0.0s done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/redis:7-alpine@sha256:7f7d30b7fdd09467bac58198a1f166dd69789d348d4fe859cccb20e0cf287fbe
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 104B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 408B done
+#5 DONE 0.0s
+
+#6 [1/2] FROM docker.io/library/redis:7-alpine@sha256:7f7d30b7fdd09467bac58198a1f166dd69789d348d4fe859cccb20e0cf287fbe
+#6 resolve docker.io/library/redis:7-alpine@sha256:7f7d30b7fdd09467bac58198a1f166dd69789d348d4fe859cccb20e0cf287fbe 0.0s done
+#6 DONE 0.0s
+
+#7 [2/2] COPY deploy/redis/redis.conf /usr/local/etc/redis/redis.conf
+#7 CACHED
+
+#8 exporting to image
+#8 exporting layers done
+#8 exporting manifest sha256:249c562a39b669676a40f2f8eaa3db5bb4d0b20091bba6d869f8cfce18b23880 0.0s done
+#8 exporting config sha256:6844680c1c96069bae6cc7c855e45f1eaf62605661126901702f702b358c136c 0.1s done
+#8 exporting attestation manifest sha256:b96198497bb934038617fb3a5c9e2b0df73fea9110e8e86316fd1c63118e9d54
+#8 exporting attestation manifest sha256:b96198497bb934038617fb3a5c9e2b0df73fea9110e8e86316fd1c63118e9d54 0.0s done
+#8 exporting manifest list sha256:94ac64760fcdc18efe2daf6ff2149e8217a2bb9aaa49438c38d70d02feacf39f done
+#8 naming to docker.io/library/agentops-rca-layout-20261123-redis:local done
+#8 unpacking to docker.io/library/agentops-rca-layout-20261123-redis:local done
+#8 DONE 0.2s
+
+#9 resolving provenance for metadata file
+#9 DONE 0.0s
+ Image agentops-rca-layout-20261123-redis:local Built
+ Network agentops-rca-layout-20261123_default Creating
+ Volume agentops-rca-layout-20261123_pgdata Creating
+ Network agentops-rca-layout-20261123_default Creating
+ Volume agentops-rca-layout-20261123_pgdata Creating
+ Volume agentops-rca-layout-20261123_pgdata Created
+ Volume agentops-rca-layout-20261123_pgdata Created
+ Network agentops-rca-layout-20261123_default Created
+ Network agentops-rca-layout-20261123_default Created
+ Container agentops-rca-layout-20261123-postgres-1 Creating
+ Container agentops-rca-layout-20261123-postgres-1 Created
+ Container agentops-rca-layout-20261123-redis-1 Creating
+ Container agentops-rca-layout-20261123-redis-1 Created
+ Container agentops-rca-layout-20261123-postgres-1 Starting
+ Container agentops-rca-layout-20261123-postgres-1 Started
+ Container agentops-rca-layout-20261123-postgres-1 Waiting
+ Container agentops-rca-layout-20261123-postgres-1 Healthy
+ Container agentops-rca-layout-20261123-redis-1 Starting
+ Container agentops-rca-layout-20261123-redis-1 Started
+ Container agentops-rca-layout-20261123-postgres-1 Waiting
+ Container agentops-rca-layout-20261123-redis-1 Waiting
+ Container agentops-rca-layout-20261123-postgres-1 Healthy
+ Container agentops-rca-layout-20261123-redis-1 Healthy
+API ready at http://127.0.0.1:8264 (offline validation)
+
+exit_code: 0

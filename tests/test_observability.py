@@ -4,7 +4,7 @@ from __future__ import annotations
 import asyncio
 import time
 
-from observability import ObservabilityCollector
+from app.telemetry.observability import ObservabilityCollector
 
 
 def check(condition: bool, message: str) -> None:
@@ -98,8 +98,8 @@ def test_system_startup_and_bounded_storage() -> None:
 
 def test_interrupt_and_error_classification():
     from langgraph.errors import GraphInterrupt, GraphBubbleUp
-    from trace_callback import TraceCallback
-    from observability import exception_status
+    from app.telemetry.trace_callback import TraceCallback
+    from app.telemetry.observability import exception_status
     from uuid import uuid4
     obs = ObservabilityCollector()
     for error, expected in [(GraphInterrupt(()), "interrupted"),
@@ -134,8 +134,8 @@ def test_interrupt_and_error_classification():
 def test_llm_calls_usage_and_failures():
     from types import SimpleNamespace as NS
     from unittest.mock import AsyncMock, patch
-    from workflow import tracked_chat_completion
-    from observability import observability as obs
+    from app.agent.workflow import tracked_chat_completion
+    from app.telemetry.observability import observability as obs
     obs.clear()
     async def run():
         create = AsyncMock(return_value=NS(usage=NS(prompt_tokens=12, completion_tokens=8, total_tokens=20)))
@@ -174,9 +174,9 @@ def test_mcp_actual_calls():
     from unittest.mock import AsyncMock
     from contextlib import redirect_stdout
     from io import StringIO
-    from mcp_tool_runtime import MCPToolRuntime
-    from observability_mcp_client import query_observability_tool
-    from observability import observability as obs
+    from app.tools.mcp_tool_runtime import MCPToolRuntime
+    from app.tools.observability_mcp_client import query_observability_tool
+    from app.telemetry.observability import observability as obs
     obs.clear()
     async def run():
         runtime = MCPToolRuntime({})
@@ -210,8 +210,8 @@ def test_mcp_actual_calls():
 
 
 def test_concurrent_callbacks_and_tools():
-    from observability import observability as obs
-    from trace_callback import TraceCallback
+    from app.telemetry.observability import observability as obs
+    from app.telemetry.trace_callback import TraceCallback
     from uuid import uuid4
     obs.clear()
     callback = TraceCallback(obs)

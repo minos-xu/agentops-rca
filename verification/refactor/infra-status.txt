@@ -1,0 +1,7 @@
+Isolated project agentops-rca-layout-20261123; ports 58432/58479/8264.
+NAME                                      IMAGE                                                                                 COMMAND                  SERVICE    CREATED          STATUS                    PORTS
+agentops-rca-layout-20261123-postgres-1   postgres:16@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657   "docker-entrypoint.s…"   postgres   57 seconds ago   Up 57 seconds (healthy)   127.0.0.1:58432->5432/tcp
+agentops-rca-layout-20261123-redis-1      agentops-rca-layout-20261123-redis:local                                              "docker-entrypoint.s…"   redis      57 seconds ago   Up 51 seconds (healthy)   127.0.0.1:58479->6379/tcp
+Managed API: running, pid=1505704
+
+exit_code: 0

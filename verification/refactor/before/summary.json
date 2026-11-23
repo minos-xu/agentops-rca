@@ -1,0 +1,79 @@
+{
+  "kind": "offline_regression",
+  "python": "3.12.14",
+  "interpreter": "/home/ubuntu/miniconda3/envs/agent-dev/bin/python",
+  "network_connections_allowed": false,
+  "existing_env_or_data_copied": false,
+  "test_harness_adjustments": [
+    {
+      "test": "test_recovery.py::Recovery.test_real_saver_failure_preserves_pending_checkpoint",
+      "change": "Temporary FaultSaver uses a shared fault-flag dict across shallow clones; all assertions and strict msgpack remain enabled.",
+      "reason": "LangGraph 1.2.16 / checkpoint 4.3.0 derives a strict-serde saver clone; original boolean flag updates target the unused saver instance.",
+      "source_test_modified_by_runner": false
+    }
+  ],
+  "results": [
+    {
+      "test": "test_hitl.py",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_workflow_interrupt.py",
+      "exit_code": 0,
+      "seconds": 1.467
+    },
+    {
+      "test": "test_rca.py",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_postgres_store.py",
+      "exit_code": 0,
+      "seconds": 0.114
+    },
+    {
+      "test": "test_redis_degradation.py",
+      "exit_code": 0,
+      "seconds": 0.215
+    },
+    {
+      "test": "test_eval_regression.py",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_eval_scoring.py",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_eval_robustness.py",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_observability.py",
+      "exit_code": 0,
+      "seconds": 15.253
+    },
+    {
+      "test": "test_trace_wiring.py",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_error_classification.py",
+      "exit_code": 0,
+      "seconds": 0.966
+    },
+    {
+      "test": "test_recovery.py",
+      "exit_code": 0,
+      "seconds": 11.846
+    }
+  ],
+  "passed": true,
+  "limitations": "Mocked LLM/MCP/database faults and local models; does not validate live DeepSeek or production telemetry."
+}

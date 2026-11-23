@@ -1,0 +1,9 @@
+{
+  "kind": "real_http_trace_probe",
+  "http_status": 409,
+  "trigger": "reject with no pending approval",
+  "trace_jsonl_written": true,
+  "llm_calls": 0,
+  "approval_executed": false,
+  "note": "Validation follows existing summary.events context; initial probe incorrectly expected a top-level session_id, corrected without changing application."
+}

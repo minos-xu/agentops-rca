@@ -1,0 +1,6 @@
+Isolated project agentops-rca-layout-20261123; ports 58432/58479/8264.
+API and its managed MCP children stopped.
+Backup complete: /home/ubuntu/project/agentops-rca-public/backups/20261123_101343 (database + memory/trace + knowledge; secrets/models excluded)
+API ready at http://127.0.0.1:8264 (offline validation)
+
+exit_code: 0

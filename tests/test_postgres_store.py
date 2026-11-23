@@ -4,8 +4,8 @@ from __future__ import annotations
 import asyncio
 from types import MethodType
 
-from hitl import ApprovalError, make_proposal
-from postgres_store import SessionRepository, PostgresSimulationAudit
+from app.agent.hitl import ApprovalError, make_proposal
+from app.storage.postgres_store import SessionRepository, PostgresSimulationAudit
 
 
 class FakeCursor:
