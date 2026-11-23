@@ -4,13 +4,12 @@
 
 一个面向微服务故障调查的 Python Agent 项目：将只读工具观测组织为证据目录，生成并校验结构化 RCA；需要人工决定的模拟处置暂停等待审批，并保存执行状态。
 
-**范围说明：**事故、遥测和处置均为合成演示，不连接生产监控，也不执行真实修复。DeepSeek 接入代码已实现；最近一次真实 LLM 端到端验收因缺少 `DEEPSEEK_API_KEY` 为 **BLOCKED**，真实 API 调用 **0 次**。[验收边界](docs/e2e/05_FINAL_E2E_DECISION.md)
+**范围说明：**事故、遥测和处置均为合成演示。DeepSeek 接入代码已实现；
 
 ## Architecture
 
 [![AgentOps RCA layered system architecture](docs/architecture/figures/01-system-architecture.png)](docs/architecture/figures/01-system-architecture.svg)
 
-[SVG](docs/architecture/figures/01-system-architecture.svg) · [Editable draw.io](docs/architecture/figures/01-system-architecture.drawio)
 
 主链是 Client → FastAPI → Traced Runtime → LangGraph；四层色带区分 API、编排、工具/推理和状态/观测。API 与 MCP 在宿主机运行，Docker Compose 仅管理 PostgreSQL / Redis，DeepSeek 是外部 Provider。
 
@@ -18,7 +17,6 @@
 - **普通问答**：模型选择工具时才调用 RAG / Utility；RAG 不在 `INC-*` 事故专用分支中。Memory 仅提供历史提示。
 - **辅助能力**：细虚线表示存储/Trace支持关系，不是串行推理步骤。图示为实现关系，**不是已经通过真实 LLM 验证的运行记录**。
 
-[详细技术说明](docs/architecture.md) · [三图设计审查](docs/architecture/FIGURE_DESIGN_REVIEW.md)
 
 ## Core Features
 
@@ -51,7 +49,6 @@
 
 [![AgentOps RCA request UML sequence](docs/architecture/figures/02-request-sequence.png)](docs/architecture/figures/02-request-sequence.svg)
 
-[SVG](docs/architecture/figures/02-request-sequence.svg) · [Editable draw.io](docs/architecture/figures/02-request-sequence.drawio)
 
 此图描述源码定义的 `INC-*` 诊断分支：请求/返回方向、真实STDIO接口、条件HITL与另一个HTTP请求中的同线程恢复。Trace在Runtime的finally中写入，Checkpoint由Saver在图步骤及中断时保存。批准也只产生模拟审计。
 
@@ -66,7 +63,6 @@
 
 [![AgentOps RCA source directory tree](docs/architecture/figures/03-project-structure.png)](docs/architecture/figures/03-project-structure.svg)
 
-[SVG](docs/architecture/figures/03-project-structure.svg) · [Editable draw.io](docs/architecture/figures/03-project-structure.drawio)
 
 树形结构来自已审计的真实核心路径，包含RCA、Storage、Telemetry等职责包。只列核心目录和文件，不展示权重、凭据、索引、数据库或其他运行产物。
 
@@ -95,27 +91,9 @@ bash scripts/manage.sh test
 bash scripts/manage.sh stop   # 停止服务，保留持久化数据
 ```
 
-## Validation
 
-| Scope | Evidence / Status |
-|---|---|
-| Offline regression | **12/12 groups passed**；LLM 与依赖故障由 Fake / Mock 注入 |
-| Local RAG | 独立真实 Embedding / FAISS / Reranker 已验证；不等同真实生成链路 |
-| MCP STDIO | 三类 Server 独立工具发现已验证，Utility / Observability 已实际调用 |
-| Infrastructure | PostgreSQL / Redis / HTTP、Checkpoint 重启、备份恢复与 Trace 有历史真实验收记录 |
-| Real DeepSeek Agent E2E | **BLOCKED**：当前缺少 API 凭据；最近一次真实调用 0 次 |
 
-**Real DeepSeek end-to-end validation is pending API credential configuration.** 独立测试通过不等于完整 E2E 通过；合成事故实验不代表生产准确率。
 
-[测试方法](docs/testing.md) · [重构回归记录](docs/refactor/04_REGRESSION_RESULTS.md) · [最新 E2E 结论](docs/e2e/05_FINAL_E2E_DECISION.md)
-
-## Documentation
-
-- [Architecture](docs/architecture.md) · [Layered SVG](docs/architecture/figures/01-system-architecture.svg)
-- [Request Sequence](docs/architecture/figures/02-request-sequence.svg) · [Detailed Request Flow](docs/architecture.md#request-flow)
-- [Project Structure](docs/architecture/project-structure.md)
-- [Deployment](docs/deployment.md) · [Testing](docs/testing.md) · [Security](docs/security.md)
-- [Figure Design Review](docs/architecture/FIGURE_DESIGN_REVIEW.md) · [Original Mermaid Design Notes](docs/architecture/ARCHITECTURE_DESIGN_REVIEW.md)
 
 ## Limitations & License
 
