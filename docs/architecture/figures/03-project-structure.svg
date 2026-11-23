@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1260" viewBox="0 0 1700 1260" role="img" aria-label="03-project-structure">
+  <title>03-project-structure</title>
+  <rect x="0" y="0" width="1700" height="1260" fill="#FFFFFF" stroke="none" stroke-width="1.2" />
+  <text x="64" y="62" font-family="DejaVu Sans, Arial, sans-serif" font-size="32" font-weight="700" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">AgentOps RCA | Project structure</text>
+  <text x="64" y="95" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Responsibility-based packages · Core files only · Runtime data and model weights excluded</text>
+  <text x="84" y="147" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">DIRECTORY / FILE</text>
+  <text x="660" y="147" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">RESPONSIBILITY</text>
+  <polyline points="84,162 1616,162" fill="none" stroke="#CCD5E0" stroke-width="1" />
+  <text x="84" y="201" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">agentops-rca/</text>
+  <text x="660" y="201" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Audited repository root</text>
+  <polyline points="96,204 96,262" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,228 117,228" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="126" y="235" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">app/</text>
+  <text x="660" y="235" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Python application</text>
+  <polyline points="140,238 140,296" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="140,262 161,262" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,238 96,296" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="170" y="269" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">main.py</text>
+  <text x="660" y="269" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">FastAPI entry: app.main:app</text>
+  <polyline points="140,272 140,330" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="140,296 161,296" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,272 96,330" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="170" y="303" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">agent/</text>
+  <text x="660" y="303" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Runtime · LangGraph workflow · HITL · Recovery</text>
+  <polyline points="140,306 140,364" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="140,330 161,330" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,306 96,364" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="170" y="337" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">api/</text>
+  <text x="660" y="337" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">HTTP routes and request validation</text>
+  <polyline points="140,340 140,398" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="140,364 161,364" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,340 96,398" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="170" y="371" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">core/</text>
+  <text x="660" y="371" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Configuration · Deployment paths · Context budget</text>
+  <polyline points="140,374 140,432" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="140,398 161,398" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,374 96,432" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="170" y="405" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">memory/</text>
+  <text x="660" y="405" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Memory Store and semantic recall</text>
+  <polyline points="140,408 140,466" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="140,432 161,432" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,408 96,466" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="170" y="439" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">rag/</text>
+  <text x="660" y="439" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Chunking · Embedding · Retrieval · Reranking</text>
+  <polyline points="140,442 140,500" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="140,466 161,466" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,442 96,500" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="170" y="473" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">rca/</text>
+  <text x="660" y="473" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Evidence rules and synthetic incident data</text>
+  <polyline points="140,476 140,534" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="140,500 161,500" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,476 96,534" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="170" y="507" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">storage/</text>
+  <text x="660" y="507" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">PostgreSQL and Redis adapters</text>
+  <polyline points="140,510 140,568" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="140,534 161,534" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,510 96,568" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="170" y="541" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">telemetry/</text>
+  <text x="660" y="541" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Collector · Trace callbacks · Reports</text>
+  <polyline points="140,544 140,568" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="140,568 161,568" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,544 96,602" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="170" y="575" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">tools/</text>
+  <text x="660" y="575" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">MCP clients / servers · STDIO launcher</text>
+  <polyline points="96,578 96,636" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,602 117,602" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="126" y="609" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">docs/</text>
+  <text x="660" y="609" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Architecture · Deployment · Testing · Security</text>
+  <polyline points="140,612 140,670" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="140,636 161,636" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,612 96,670" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="170" y="643" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">architecture/</text>
+  <text x="660" y="643" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Architecture diagrams and editable figure sources</text>
+  <polyline points="140,646 140,704" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="140,670 161,670" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,646 96,704" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="170" y="677" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">refactor/</text>
+  <text x="660" y="677" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Migration maps and regression audits</text>
+  <polyline points="140,680 140,704" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="140,704 161,704" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,680 96,738" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="170" y="711" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">release/</text>
+  <text x="660" y="711" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Preserved release evidence</text>
+  <polyline points="96,714 96,772" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,738 117,738" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="126" y="745" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">scripts/</text>
+  <text x="660" y="745" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Operations · Deployment probes · Test runners</text>
+  <polyline points="96,748 96,806" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,772 117,772" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="126" y="779" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">tests/</text>
+  <text x="660" y="779" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">12 offline regression groups and fixtures</text>
+  <polyline points="96,782 96,840" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,806 117,806" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="126" y="813" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">evaluation/</text>
+  <text x="660" y="813" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Standalone scoring and robustness rules</text>
+  <polyline points="96,816 96,874" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,840 117,840" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="126" y="847" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">verification/</text>
+  <text x="660" y="847" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Sanitized evidence and validation results</text>
+  <polyline points="96,850 96,908" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,874 117,874" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="126" y="881" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">documents/</text>
+  <text x="660" y="881" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Public synthetic knowledge base</text>
+  <polyline points="96,884 96,942" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,908 117,908" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="126" y="915" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">deploy/</text>
+  <text x="660" y="915" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Redis configuration and model manifest</text>
+  <polyline points="96,918 96,976" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,942 117,942" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="126" y="949" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">docker-compose.yml</text>
+  <text x="660" y="949" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">PostgreSQL / Redis containers only</text>
+  <polyline points="96,952 96,1010" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,976 117,976" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="126" y="983" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">Dockerfile</text>
+  <text x="660" y="983" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Redis configuration image</text>
+  <polyline points="96,986 96,1044" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,1010 117,1010" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="126" y="1017" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">requirements.txt</text>
+  <text x="660" y="1017" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Runtime dependencies and version constraints</text>
+  <polyline points="96,1020 96,1078" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,1044 117,1044" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="126" y="1051" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">environment.yml</text>
+  <text x="660" y="1051" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Conda agent-dev environment</text>
+  <polyline points="96,1054 96,1112" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,1078 117,1078" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="126" y="1085" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">README.md</text>
+  <text x="660" y="1085" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">GitHub project overview</text>
+  <polyline points="96,1088 96,1112" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <polyline points="96,1112 117,1112" fill="none" stroke="#BCC6D2" stroke-width="1" />
+  <text x="126" y="1119" font-family="DejaVu Sans Mono, Arial, sans-serif" font-size="20" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">LICENSE</text>
+  <text x="660" y="1119" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Project license; upstream notices kept separately</text>
+  <polyline points="64,1203 1636,1203" fill="none" stroke="#CCD5E0" stroke-width="1" />
+  <text x="64" y="1231" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Tree matches audited source paths · Architecture figures include editable sources · Generated indexes, secrets and state are omitted</text>
+</svg>

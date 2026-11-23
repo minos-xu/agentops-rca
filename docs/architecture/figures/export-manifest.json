@@ -1,0 +1,56 @@
+{
+  "renderer": "Shared geometry \u2192 native SVG / editable mxGraph XML / FreeType 2x PNG",
+  "dependencies": "Existing NumPy and system FreeType; no installations or network",
+  "figures": [
+    {
+      "name": "01-system-architecture",
+      "logical_size": [
+        1920,
+        1080
+      ],
+      "png_size": [
+        3840,
+        2160
+      ],
+      "editable_cells": 106,
+      "text_elements": 64
+    },
+    {
+      "name": "02-request-sequence",
+      "logical_size": [
+        2220,
+        3607
+      ],
+      "png_size": [
+        4440,
+        7214
+      ],
+      "editable_cells": 216,
+      "text_elements": 101
+    },
+    {
+      "name": "03-project-structure",
+      "logical_size": [
+        1700,
+        1260
+      ],
+      "png_size": [
+        3400,
+        2520
+      ],
+      "editable_cells": 131,
+      "text_elements": 61
+    }
+  ],
+  "files": {
+    "01-system-architecture.drawio": "476fa2981963edb9d24a875b8c0e1f84ac9be19623953d823c5b03684a98cdc4",
+    "01-system-architecture.png": "47a7eb9eece05ef93c4310c0c4e058c8183716184511ebcb86acb067b2fa3685",
+    "01-system-architecture.svg": "fe711d663dd511cfa304b210ef8e21c65fa87bf7efc509636f2f612b8567ee17",
+    "02-request-sequence.drawio": "9f968416b82ec0feaee3928388ca060c798931d1eed55b086fa21de00c027ce7",
+    "02-request-sequence.png": "5b66593f9a4851fc73ab0da40107aa7b2d245ca8580c705a9e1d70142231f2ef",
+    "02-request-sequence.svg": "a933b48e9d37b4140f6576f03288b6290cdd068c0bd327e012b29ef937bef7b0",
+    "03-project-structure.drawio": "0bf001eb51d1e0ad429c1a246f9344c71998fc0bd7f455deb2418a29fd62161e",
+    "03-project-structure.png": "03b589542f0d0bf7b062a65e2f7a8099c5996dbb8c382bda0e87cd0afb2b5279",
+    "03-project-structure.svg": "b879a09891f0a5d5b9de68e6d925458433fd5523a1d44bc7ecb106f2e672db0b"
+  }
+}

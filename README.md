@@ -1,122 +1,124 @@
-# AgentOps — Evidence-Driven RCA Agent
+# AgentOps RCA
 
-一个面向故障调查的 Python Agent。它通过 MCP 收集同一事故的指标、日志和调用链，在 LangGraph 中生成并校验结构化 RCA。证据不足时，系统会保留证据缺口。符合规则的模拟处置提案会暂停等待人工审批，重启后可从 PostgreSQL Checkpoint 读取状态。
+**Evidence-driven incident investigation with LangGraph, MCP and persistent execution state.**
 
-**演示范围**：事故、遥测和执行回执均为教学模拟。即使人工批准，也只写模拟审计记录。
+一个面向微服务故障调查的 Python Agent 项目：将只读工具观测组织为证据目录，生成并校验结构化 RCA；需要人工决定的模拟处置暂停等待审批，并保存执行状态。
 
-## 技术栈与工程实现
-
-| 层 | 实现 |
-|---|---|
-| HTTP 与工作流 | Python 3.12、FastAPI、LangGraph、OpenAI 兼容的 DeepSeek 接口 |
-| 工具与知识库 | MCP STDIO、FAISS、本地 Embedding 和 Reranker、长期 Memory |
-| 持久化与限流 | PostgreSQL 16 会话映射、Checkpoint、审计。Redis 7 案例缓存与 Lua 原子限流 |
-| 观测与容错 | Trace 关联请求、Graph 节点、LLM 和工具尝试。模型用量记录、异常分类、超时、有界重试 |
-| 工程交付 | Docker Compose 混合部署、依赖与模型版本记录、离线回归、真实基础设施验收和恢复手册 |
-
-- **证据约束**。Python 校验当前事故的证据 ID、支持来源与 RCA 结构。历史 Memory 只作为排查提示。证据不足时可返回 `insufficient_evidence`。
-- **审批与恢复**。LangGraph 中断等待决定，使用同一 `thread_id` 恢复。白名单约束模拟动作，数据库唯一约束保护模拟审计的幂等写入。
-- **失败边界**。只读遥测可有限重试。限流依赖故障拒绝消息，审批和数据库写入无自动重放。Trace 记录耗时、异常类型和 Token 计数。
+**范围说明：**事故、遥测和处置均为合成演示，不连接生产监控，也不执行真实修复。DeepSeek 接入代码已实现；最近一次真实 LLM 端到端验收因缺少 `DEEPSEEK_API_KEY` 为 **BLOCKED**，真实 API 调用 **0 次**。[验收边界](docs/e2e/05_FINAL_E2E_DECISION.md)
 
 ## Architecture
 
-```mermaid
-flowchart LR
-  U[Local client] --> A[FastAPI]
-  subgraph H[Linux host · Conda agent-dev]
-    A --> R[Traced runtime]
-    R --> G[LangGraph]
-    G --> O[Observability MCP · synthetic evidence]
-    G --> M[RAG MCP]
-    G --> Q[Utility MCP]
-    G --> I[HITL · interrupt / resume]
-    R --> T[Trace JSONL]
-    G --> K[Long-term memory]
-    M --> V[Local RAG index and models]
-  end
-  subgraph D[Docker Compose]
-    P[(PostgreSQL · sessions / checkpoints / audit)]
-    C[(Redis · cache / rate limit)]
-  end
-  R --> P
-  G --> P
-  R --> C
-  G --> L[DeepSeek API · live mode]
-```
+[![AgentOps RCA layered system architecture](docs/architecture/figures/01-system-architecture.png)](docs/architecture/figures/01-system-architecture.svg)
 
-**事故请求路径**：客户端 → FastAPI → Runtime 限流与会话检查 → LangGraph → 只读 MCP 证据 → RCA 校验 → 结束或 HITL 暂停 → Checkpoint / 模拟审计。普通问题可以进入 RAG 或通用工具分支。 [架构与模块说明](docs/architecture.md)
+[SVG](docs/architecture/figures/01-system-architecture.svg) · [Editable draw.io](docs/architecture/figures/01-system-architecture.drawio)
 
-## Quick start
+主链是 Client → FastAPI → Traced Runtime → LangGraph；四层色带区分 API、编排、工具/推理和状态/观测。API 与 MCP 在宿主机运行，Docker Compose 仅管理 PostgreSQL / Redis，DeepSeek 是外部 Provider。
 
-克隆后在 Linux 项目根目录执行。先安装 Docker Engine、Docker Compose 和 Conda，并按部署手册准备约 2.4 GB 的本地模型。Python 依赖和镜像另占空间。
+- **事故 RCA**：LLM JSON 规划 → 白名单 Observability MCP 收集**合成证据** → LLM 结构化 RCA → Python 校验 → 按条件中断等待人工决定。
+- **普通问答**：模型选择工具时才调用 RAG / Utility；RAG 不在 `INC-*` 事故专用分支中。Memory 仅提供历史提示。
+- **辅助能力**：细虚线表示存储/Trace支持关系，不是串行推理步骤。图示为实现关系，**不是已经通过真实 LLM 验证的运行记录**。
+
+[详细技术说明](docs/architecture.md) · [三图设计审查](docs/architecture/FIGURE_DESIGN_REVIEW.md)
+
+## Core Features
+
+- **LangGraph workflow**：区分事故调查与普通问答，维护 Agent State 与执行分支。
+- **MCP tool integration**：真实 STDIO Client / Server；事故工具只读，校验工具白名单与返回证据。
+- **Local RAG retrieval**：本地 Embedding、FAISS、Reranker；普通问答可选择 `rag_query`，回答判断与生成仍需 LLM。
+- **Human-in-the-loop**：提案符合规则才中断；人工决定恢复同一线程，动作只写模拟审计。
+- **Persistent state**：PostgreSQL 保存 Session 映射、Checkpoint 和模拟审计。
+- **Redis cache / rate limit**：案例目录 TTL 缓存与消息 Lua 原子限流，限流依赖失败时拒绝请求。
+- **Trace / recovery**：关联请求、节点、工具、LLM 尝试与用量；错误分类及有界重试。
+- **Docker Compose delivery**：PostgreSQL / Redis 容器，宿主机单 Worker API / MCP；提供启停、健康检查和备份工具。
+
+## Tech Stack
+
+| Category | Technology |
+|---|---|
+| Backend | Python 3.12 · FastAPI · Uvicorn |
+| Agent | LangGraph · LangChain Core |
+| LLM | DeepSeek API integration（真实 E2E 待凭据验证） |
+| Tool Protocol | MCP STDIO |
+| Retrieval | Sentence Transformers · FAISS · BGE Reranker |
+| Database / Cache | PostgreSQL 16 · Redis 7 |
+| Observability | In-process Collector · Trace JSONL |
+| Deployment | Conda `agent-dev` · Docker Compose（数据服务） |
+
+## Request Sequence
+
+<details>
+<summary>展开 RCA 请求 UML 时序：Session、LLM、MCP、Checkpoint 与 HITL</summary>
+
+[![AgentOps RCA request UML sequence](docs/architecture/figures/02-request-sequence.png)](docs/architecture/figures/02-request-sequence.svg)
+
+[SVG](docs/architecture/figures/02-request-sequence.svg) · [Editable draw.io](docs/architecture/figures/02-request-sequence.drawio)
+
+此图描述源码定义的 `INC-*` 诊断分支：请求/返回方向、真实STDIO接口、条件HITL与另一个HTTP请求中的同线程恢复。Trace在Runtime的finally中写入，Checkpoint由Saver在图步骤及中断时保存。批准也只产生模拟审计。
+
+**Real DeepSeek E2E pending credentials.** RAG/Utility不在本事故分支，未为了凑参与者画成必经环节；本图不是一次已经成功执行的真实API日志。
+
+</details>
+
+## Project Structure
+
+<details>
+<summary>展开职责分包目录树</summary>
+
+[![AgentOps RCA source directory tree](docs/architecture/figures/03-project-structure.png)](docs/architecture/figures/03-project-structure.svg)
+
+[SVG](docs/architecture/figures/03-project-structure.svg) · [Editable draw.io](docs/architecture/figures/03-project-structure.drawio)
+
+树形结构来自已审计的真实核心路径，包含RCA、Storage、Telemetry等职责包。只列核心目录和文件，不展示权重、凭据、索引、数据库或其他运行产物。
+
+</details>
+
+[目录职责与模块边界](docs/architecture/project-structure.md)。
+
+## Quick Start
+
+先准备 Linux、Conda、Docker Compose，并按[部署手册](docs/deployment.md)配置约 2.4 GB 的本地模型；初次获取依赖和镜像可能需要网络。
 
 ```bash
 conda env create -f environment.yml
 conda activate agent-dev
 bash scripts/manage.sh init
-# 在 .env.docker 中设置本地 Embedding 和 Reranker 路径
+# 用本机编辑器设置 .env.docker 中的本地模型路径，保留凭据私密
 bash scripts/manage.sh index
 bash scripts/manage.sh up --offline
 bash scripts/manage.sh health
 ```
 
-`index` 从公开的合成知识库重建索引。PostgreSQL 和 Redis 由 Compose 启动，FastAPI、LangGraph 和 MCP 在宿主机运行。Dockerfile 构建 Redis 镜像。`--offline` 验收无需 DeepSeek Key，可验证健康检查、工具和状态持久化。生成 RCA 或 RAG 最终回答需要在本机配置 `DEEPSEEK_API_KEY`，然后以在线模式启动。使用 `bash scripts/manage.sh stop` 停止服务并保留数据。 [完整部署步骤](docs/deployment.md)
-
-### API examples
-
-```bash
-curl -fsS http://127.0.0.1:8164/health
-curl -fsS http://127.0.0.1:8164/api/v1/cases
-curl -fsS -X POST http://127.0.0.1:8164/api/v1/sessions
-```
-
-真实 LLM 演示可在本机 [Swagger UI](http://127.0.0.1:8164/docs) 创建会话、向 `/api/v1/sessions/{session_id}/messages` 提交 `{"message":"请调查 INC-001"}`、通过 `/report` 读取 RCA，通过 `/pending` 检查提案。评测期间对模拟提案使用 `reject`。
-
-## Testing
+默认 API 为 `127.0.0.1:8164`，文档入口 `/docs`。`--offline` 用于本地依赖与状态验收，不提供真实 LLM 诊断。真实演示需安全配置 `DEEPSEEK_API_KEY` 后以在线模式启动，并先补齐真实 E2E 验收。
 
 ```bash
 bash scripts/manage.sh test
+bash scripts/manage.sh stop   # 停止服务，保留持久化数据
 ```
 
-- **离线回归**。发布副本包含 12 组测试脚本，覆盖 Lesson 64 原有的 10 组回归，另含评分与鲁棒性两组。组数与各脚本内的测试用例数分别统计。
-- **真实基础设施验收**。使用独立 Compose 项目验证 PostgreSQL、Redis、HTTP、MCP 启动和 Checkpoint 重启恢复。测试状态由探针写入 Saver。
-- **历史 DeepSeek 验证**。早期版本曾用真实 DeepSeek 调查合成事故。公开整理阶段调用的是离线测试或不依赖模型的真实基础设施探针。
+## Validation
 
-具体证据与复现命令见 [测试说明](docs/testing.md) 和 [最终发布审计](docs/release/FINAL_GITHUB_AUDIT.md)。
+| Scope | Evidence / Status |
+|---|---|
+| Offline regression | **12/12 groups passed**；LLM 与依赖故障由 Fake / Mock 注入 |
+| Local RAG | 独立真实 Embedding / FAISS / Reranker 已验证；不等同真实生成链路 |
+| MCP STDIO | 三类 Server 独立工具发现已验证，Utility / Observability 已实际调用 |
+| Infrastructure | PostgreSQL / Redis / HTTP、Checkpoint 重启、备份恢复与 Trace 有历史真实验收记录 |
+| Real DeepSeek Agent E2E | **BLOCKED**：当前缺少 API 凭据；最近一次真实调用 0 次 |
 
-## Limitations
+**Real DeepSeek end-to-end validation is pending API credential configuration.** 独立测试通过不等于完整 E2E 通过；合成事故实验不代表生产准确率。
 
-单 Worker，API 无公网鉴权，监听回环地址。遥测和处置为合成演示。Redis 为非持久化缓存与计数。文件型 Memory 和 Trace 需要单独备份，Trace 无自动轮转。没有完成第二台全新服务器的端到端安装迁移，也没有生产可用性、准确率或负载基准。
+[测试方法](docs/testing.md) · [重构回归记录](docs/refactor/04_REGRESSION_RESULTS.md) · [最新 E2E 结论](docs/e2e/05_FINAL_E2E_DECISION.md)
 
-## License
+## Documentation
 
-项目自有或获授权部分使用 [MIT](LICENSE)。依赖、镜像和模型遵循 [各自的上游许可](THIRD_PARTY_NOTICES.md)。
+- [Architecture](docs/architecture.md) · [Layered SVG](docs/architecture/figures/01-system-architecture.svg)
+- [Request Sequence](docs/architecture/figures/02-request-sequence.svg) · [Detailed Request Flow](docs/architecture.md#request-flow)
+- [Project Structure](docs/architecture/project-structure.md)
+- [Deployment](docs/deployment.md) · [Testing](docs/testing.md) · [Security](docs/security.md)
+- [Figure Design Review](docs/architecture/FIGURE_DESIGN_REVIEW.md) · [Original Mermaid Design Notes](docs/architecture/ARCHITECTURE_DESIGN_REVIEW.md)
 
-## Package layout
+## Limitations & License
 
-```text
-app/
-  app.main.py       # 唯一正式 FastAPI 入口 app.main:app
-  api/          # HTTP 路由与请求校验
-  core/         # 环境配置、稳定项目根路径、上下文预算
-  agent/        # Runtime 继承链、LangGraph 工作流、HITL、Recovery
-  rca/          # 证据规则与合成事故数据
-  tools/        # MCP Client / Server / STDIO 脱敏启动器
-  rag/          # 文档、Embedding、索引、检索、重排、生成
-  memory/       # 长期 Memory 与检索配置
-  storage/      # PostgreSQL / Redis 适配
-  telemetry/    # Collector、Trace Callback 与报告
- evaluation/    # 独立评分与鲁棒性规则（不进入在线工作流）
- tests/         # 12 组离线回归与夹具
- scripts/       # 运维、索引、回归、真实工具探针和发布打包
- docs/          # 架构、部署、测试、安全与保留的发布证据
- verification/  # 已脱敏的验证证据
- documents/     # 公开合成知识库；本地生成的索引不提交
-```
+单 Worker、无公网认证的本地演示 API；Collector 为进程内对象，Memory / Trace 需文件备份，Redis 计数非持久化。没有生产负载、生产遥测或第二台干净服务器的完整部署验证。
 
-启动仍采用宿主机 API/MCP + Docker 数据服务；没有增加服务或新依赖。
-模块启动示例：`python -m uvicorn app.main:app --host 127.0.0.1 --port 8164 --workers 1`。
-知识库重建使用 `bash scripts/manage.sh index`，模块命令为 `python -m app.rag.ingest`。
-跨目录运维可执行 `/absolute/path/to/project/scripts/manage.sh`；MCP 显式以项目根为 cwd 启动包模块。
-部署的 Memory/Trace 继续使用既有目录名，不需要迁移数据库或重写 Checkpoint。
-完整重构及验收结论见 [重构报告](docs/refactor/05_REFACTOR_FINAL_DECISION.md)。
+自有或获授权代码使用 [MIT](LICENSE)；依赖、模型及镜像遵循[第三方许可](THIRD_PARTY_NOTICES.md)。

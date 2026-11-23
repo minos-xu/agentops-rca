@@ -1,0 +1,93 @@
+%% Execution order is audited from workflow.py. Live DeepSeek E2E is BLOCKED.
+%% Session creation is a separate POST /sessions; messages reuse its session_id.
+flowchart TD
+    REQUEST["Client · Existing Session<br/>POST /sessions/{id}/messages"]
+    VALIDATE["FastAPI<br/>Validate message body"]
+    QUOTA["Runtime<br/>Validate Session · Redis quota"]
+    CONTEXT["Traced ask<br/>Create request context"]
+    GUARD["runtime.ask<br/>Lock · Check pending state"]
+    MEMORY["retrieve_memory<br/>Historical hints only"]
+    PLANNER["planner<br/>Detect incident ID"]
+    INCIDENT{"INC request?"}
+
+    PLAN_LLM["Planner LLM<br/>JSON plan · Normalize whitelist"]
+    OBS["collect_evidence<br/>Observability MCP via STDIO<br/>Synthetic evidence"]
+    RCA["structured_rca<br/>Evidence catalog → LLM JSON"]
+    VALID_RCA{"RCA structure and<br/>evidence valid?"}
+    RETRY{"Regeneration<br/>already used?"}
+    FALLBACK["insufficient_report<br/>Conservative evidence gaps"]
+    PROPOSAL{"prepare_proposal<br/>Eligible for simulation?"}
+    INTERRUPT["human_approval<br/>Interrupt · Pending checkpoint"]
+
+    CHAT["llm<br/>General chat · tools=auto"]
+    TOOL_CHOICE{"Model returned<br/>tool_calls?"}
+    TOOLS["tools · MCP STDIO<br/>RAG / Utility only as requested"]
+
+    HUMAN["Human · POST /decisions<br/>Validate pending / action_id"]
+    RESUME["Command resume<br/>Same graph thread"]
+    DECISION{"Approval decision"}
+    SIMULATE["execute_simulation<br/>Write simulated audit only"]
+    REJECT["reject_simulation<br/>Write rejection audit"]
+
+    SNAPSHOT["aget_state / summarize_state<br/>Completed or pending response"]
+    RESPONSE["Return HTTP snapshot<br/>Full RCA via GET /report"]
+    PG[("PostgreSQL Saver<br/>Checkpoints at steps / interrupt")]
+    TRACE["Collector → JSONL<br/>Request finally · Safe metadata"]
+    EARLY["API rejection<br/>400 / 404 / 409 / 422 / 429 / 503"]
+    DEPENDENCY["Known dependency failure<br/>Fixed HTTP 503 response"]
+
+    REQUEST ==> VALIDATE
+    VALIDATE ==> QUOTA
+    QUOTA ==> CONTEXT
+    CONTEXT ==> GUARD
+    GUARD ==> MEMORY
+    MEMORY ==> PLANNER
+    PLANNER ==> INCIDENT
+    INCIDENT -->|"Yes"| PLAN_LLM
+    PLAN_LLM --> OBS
+    OBS --> RCA
+    PLAN_LLM -. "Failure: safe default plan" .-> OBS
+    RCA --> VALID_RCA
+    RCA -. "LLM failure after allowed recovery" .-> FALLBACK
+    VALID_RCA -->|"Yes"| PROPOSAL
+    VALID_RCA -->|"No"| RETRY
+    RETRY -->|"No: regenerate once"| RCA
+    RETRY -->|"Yes"| FALLBACK
+    FALLBACK --> PROPOSAL
+    PROPOSAL -->|"No"| SNAPSHOT
+    PROPOSAL -->|"Yes"| INTERRUPT
+    INTERRUPT -->|"Return pending, no action"| SNAPSHOT
+    INCIDENT -->|"No: evidence collection skips"| CHAT
+    CHAT --> TOOL_CHOICE
+    TOOL_CHOICE -->|"Yes"| TOOLS
+    TOOLS -->|"ToolMessage"| CHAT
+    TOOL_CHOICE -->|"No"| SNAPSHOT
+    HUMAN --> RESUME
+    RESUME -->|"Re-enter human_approval"| DECISION
+    DECISION -->|"Approved"| SIMULATE
+    DECISION -->|"Rejected"| REJECT
+    SIMULATE --> SNAPSHOT
+    REJECT --> SNAPSHOT
+    SNAPSHOT ==> RESPONSE
+    VALIDATE -->|"Invalid input"| EARLY
+    QUOTA -->|"Unknown Session / quota failure"| EARLY
+    GUARD -->|"Already awaiting approval"| EARLY
+    HUMAN -->|"Invalid decision / action"| EARLY
+    MEMORY -. "Step persistence" .-> PG
+    RCA -. "Step persistence" .-> PG
+    INTERRUPT -. "Save interruption" .-> PG
+    RESUME -. "Read / write thread state" .-> PG
+    PG -. "Known transport / timeout failure" .-> DEPENDENCY
+    CONTEXT -. "Observe nodes / tools / LLM" .-> TRACE
+    RESPONSE -. "Request finally" .-> TRACE
+
+    classDef api fill:#EFF6FF,stroke:#2563EB,color:#0F172A
+    classDef agent fill:#F5F3FF,stroke:#7C3AED,color:#0F172A
+    classDef tool fill:#F0FDFA,stroke:#0F766E,color:#0F172A
+    classDef store fill:#FFF7ED,stroke:#C2410C,color:#0F172A
+    classDef neutral fill:#F1F5F9,stroke:#64748B,color:#0F172A
+    class REQUEST,VALIDATE,RESPONSE,HUMAN api
+    class CONTEXT,GUARD,MEMORY,PLANNER,INCIDENT,RCA,VALID_RCA,RETRY,FALLBACK,PROPOSAL,INTERRUPT,CHAT,TOOL_CHOICE,RESUME,DECISION agent
+    class OBS,TOOLS tool
+    class PG,TRACE,QUOTA,SIMULATE,REJECT store
+    class PLAN_LLM,EARLY,DEPENDENCY,SNAPSHOT neutral

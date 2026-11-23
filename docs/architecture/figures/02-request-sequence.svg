@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2220" height="3607" viewBox="0 0 2220 3607" role="img" aria-label="02-request-sequence">
+  <title>02-request-sequence</title>
+  <rect x="0" y="0" width="2220" height="3607" fill="#FFFFFF" stroke="none" stroke-width="1.2" />
+  <text x="64" y="62" font-family="DejaVu Sans, Arial, sans-serif" font-size="32" font-weight="700" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">AgentOps RCA | RCA request sequence</text>
+  <text x="64" y="95" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Source-defined INC path · Real DeepSeek E2E pending credentials · RAG / Utility chat branch is intentionally not shown</text>
+  <rect x="64" y="2580" width="2092" height="834" fill="#FFFFFF" stroke="#CCD5E0" stroke-width="1" />
+  <rect x="64" y="290" width="2092" height="286" fill="#FFFFFF" stroke="#CCD5E0" stroke-width="1" />
+  <rect x="64" y="1390" width="2092" height="210" fill="#FFFFFF" stroke="#CCD5E0" stroke-width="1" />
+  <rect x="64" y="1938" width="2092" height="190" fill="#FFFFFF" stroke="#CCD5E0" stroke-width="1" />
+  <rect x="64" y="1782" width="2092" height="134" fill="#FFFFFF" stroke="#CCD5E0" stroke-width="1" />
+  <rect x="245" y="118" width="910" height="27" fill="#F5F7FA" stroke="none" stroke-width="1.2" />
+  <text x="599.0" y="137" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">API process · Single worker</text>
+  <rect x="1185" y="118" width="210" height="27" fill="#F5F7FA" stroke="none" stroke-width="1.2" />
+  <text x="1223.5" y="137" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#167B78" style="font-kerning:none;font-variant-ligatures:none">STDIO subprocess</text>
+  <rect x="1435" y="118" width="210" height="27" fill="#F5F7FA" stroke="none" stroke-width="1.2" />
+  <text x="1480.5" y="137" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">External service</text>
+  <rect x="1685" y="118" width="470" height="27" fill="#F5F7FA" stroke="none" stroke-width="1.2" />
+  <text x="1858.5" y="137" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#A96320" style="font-kerning:none;font-variant-ligatures:none">Docker Compose</text>
+  <polyline points="130,224 130,3507" fill="none" stroke="#ABB7C6" stroke-width="1" stroke-dasharray="6 5" />
+  <rect x="38" y="151" width="184" height="73" fill="#FFFFFF" stroke="#245EA8" stroke-width="1.3" />
+  <text x="102.0" y="180" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">Client</text>
+  <text x="84.0" y="204" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Tester / human</text>
+  <polyline points="340,224 340,3507" fill="none" stroke="#ABB7C6" stroke-width="1" stroke-dasharray="6 5" />
+  <rect x="248" y="151" width="184" height="73" fill="#FFFFFF" stroke="#245EA8" stroke-width="1.3" />
+  <text x="303.5" y="180" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">FastAPI</text>
+  <text x="284.5" y="204" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Validation / routes</text>
+  <polyline points="570,224 570,3507" fill="none" stroke="#ABB7C6" stroke-width="1" stroke-dasharray="6 5" />
+  <rect x="478" y="151" width="184" height="73" fill="#FFFFFF" stroke="#6B48A5" stroke-width="1.3" />
+  <text x="494.5" y="180" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">Traced Runtime</text>
+  <text x="525.25" y="204" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Agent Runtime</text>
+  <polyline points="810,224 810,3507" fill="none" stroke="#ABB7C6" stroke-width="1" stroke-dasharray="6 5" />
+  <rect x="718" y="151" width="184" height="73" fill="#FFFFFF" stroke="#6B48A5" stroke-width="1.3" />
+  <text x="757.75" y="180" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">LangGraph</text>
+  <text x="760.75" y="204" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">State / LLM calls</text>
+  <polyline points="1050,224 1050,3507" fill="none" stroke="#ABB7C6" stroke-width="1" stroke-dasharray="6 5" />
+  <rect x="958" y="151" width="184" height="73" fill="#FFFFFF" stroke="#167B78" stroke-width="1.3" />
+  <text x="998.0" y="180" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#167B78" style="font-kerning:none;font-variant-ligatures:none">MCP Client</text>
+  <text x="999.25" y="204" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Result validation</text>
+  <polyline points="1290,224 1290,3507" fill="none" stroke="#ABB7C6" stroke-width="1" stroke-dasharray="6 5" />
+  <rect x="1198" y="151" width="184" height="73" fill="#FFFFFF" stroke="#167B78" stroke-width="1.3" />
+  <text x="1226.0" y="180" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#167B78" style="font-kerning:none;font-variant-ligatures:none">Observability</text>
+  <text x="1255.25" y="204" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">MCP Server</text>
+  <polyline points="1540,224 1540,3507" fill="none" stroke="#ABB7C6" stroke-width="1" stroke-dasharray="6 5" />
+  <rect x="1448" y="151" width="184" height="73" fill="#FFFFFF" stroke="#607086" stroke-width="1.3" />
+  <text x="1473.25" y="180" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">DeepSeek API</text>
+  <text x="1487.75" y="204" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">External provider</text>
+  <polyline points="1790,224 1790,3507" fill="none" stroke="#ABB7C6" stroke-width="1" stroke-dasharray="6 5" />
+  <rect x="1698" y="151" width="184" height="73" fill="#FFFFFF" stroke="#A96320" stroke-width="1.3" />
+  <text x="1734.25" y="180" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#A96320" style="font-kerning:none;font-variant-ligatures:none">PostgreSQL</text>
+  <text x="1722.25" y="204" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Saver / registry / audit</text>
+  <polyline points="2050,224 2050,3507" fill="none" stroke="#ABB7C6" stroke-width="1" stroke-dasharray="6 5" />
+  <rect x="1958" y="151" width="184" height="73" fill="#FFFFFF" stroke="#A96320" stroke-width="1.3" />
+  <text x="2023.75" y="180" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#A96320" style="font-kerning:none;font-variant-ligatures:none">Redis</text>
+  <text x="2004.0" y="204" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Message quota</text>
+  <rect x="335" y="644" width="10" height="1872" fill="#F3EDFB" stroke="#6B48A5" stroke-width="1" />
+  <rect x="565" y="956" width="10" height="1484" fill="#F3EDFB" stroke="#6B48A5" stroke-width="1" />
+  <rect x="805" y="1230" width="10" height="1016" fill="#F3EDFB" stroke="#6B48A5" stroke-width="1" />
+  <rect x="1535" y="1272" width="10" height="58" fill="#F3EDFB" stroke="#6B48A5" stroke-width="1" />
+  <rect x="1535" y="1664" width="10" height="58" fill="#F3EDFB" stroke="#6B48A5" stroke-width="1" />
+  <rect x="1045" y="1444" width="10" height="134" fill="#F3EDFB" stroke="#6B48A5" stroke-width="1" />
+  <rect x="1285" y="1482" width="10" height="58" fill="#F3EDFB" stroke="#6B48A5" stroke-width="1" />
+  <rect x="335" y="2634" width="10" height="758" fill="#F3EDFB" stroke="#6B48A5" stroke-width="1" />
+  <rect x="565" y="2672" width="10" height="682" fill="#F3EDFB" stroke="#6B48A5" stroke-width="1" />
+  <rect x="64" y="290" width="477.0" height="31" fill="#F6F8FB" stroke="#CCD5E0" stroke-width="1" />
+  <text x="77" y="311" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">opt  New Session only — existing sessions reuse their ID</text>
+  <rect x="64" y="1390" width="604.5" height="31" fill="#F6F8FB" stroke="#CCD5E0" stroke-width="1" />
+  <text x="77" y="1411" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">loop  Each normalized read-only tool: metrics / logs / traces [+ topology]</text>
+  <rect x="64" y="1782" width="662.5" height="31" fill="#F6F8FB" stroke="#CCD5E0" stroke-width="1" />
+  <text x="77" y="1803" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">opt  Validation fails: regenerate once; final failure returns insufficient evidence</text>
+  <rect x="64" y="1938" width="280.5" height="31" fill="#F6F8FB" stroke="#CCD5E0" stroke-width="1" />
+  <text x="77" y="1959" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">alt  Eligible simulation proposal</text>
+  <rect x="64" y="2580" width="561.0" height="31" fill="#F6F8FB" stroke="#CCD5E0" stroke-width="1" />
+  <text x="77" y="2601" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">opt  A human later sends a valid decision for the pending action_id</text>
+  <polyline points="130,344 340,344" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="340,344 329.7,339.35 329.7,348.65" fill="#172B4D" />
+  <text x="182.0" y="335" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">POST /sessions</text>
+  <polyline points="340,382 570,382" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="570,382 559.7,377.35 559.7,386.65" fill="#172B4D" />
+  <text x="397.5" y="373" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">create_session()</text>
+  <polyline points="570,420 1790,420" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="1790,420 1779.7,415.35 1779.7,424.65" fill="#172B4D" />
+  <text x="982.0" y="411" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">INSERT session_id → thread_id; commit before exposure</text>
+  <polyline points="1790,458 570,458" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="570,458 580.3,462.65 580.3,453.35" fill="#607086" />
+  <text x="1109.0" y="449" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">mapping committed</text>
+  <polyline points="570,496 340,496" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="340,496 350.3,500.65 350.3,491.35" fill="#607086" />
+  <text x="389.5" y="487" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">durable session_id</text>
+  <polyline points="340,534 130,534" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="130,534 140.3,538.65 140.3,529.35" fill="#607086" />
+  <text x="191.25" y="525" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">201 Created</text>
+  <rect x="64" y="580" width="2092" height="34" fill="#F5F7FA" stroke="none" stroke-width="1.2" />
+  <text x="80" y="603" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">MESSAGE REQUEST  ·  HTTP validation and Redis quota precede traced ask</text>
+  <polyline points="130,644 340,644" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="340,644 329.7,639.35 329.7,648.65" fill="#172B4D" />
+  <text x="176.75" y="635" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">POST /messages</text>
+  <polyline points="340,682 406,682 406,699 340,699" fill="none" stroke="#245EA8" stroke-width="1.2" />
+  <polygon points="340,699 350.2,703.6 350.2,694.4" fill="#245EA8" />
+  <text x="354" y="674" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">validate input</text>
+  <polyline points="340,724 570,724" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="570,724 559.7,719.35 559.7,728.65" fill="#172B4D" />
+  <text x="356.75" y="715" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">enforce_message_rate_limit</text>
+  <polyline points="570,762 636,762 636,779 570,779" fill="none" stroke="#6B48A5" stroke-width="1.2" />
+  <polygon points="570,779 580.2,783.6 580.2,774.4" fill="#6B48A5" />
+  <text x="584" y="754" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">validate Session</text>
+  <polyline points="570,804 2050,804" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="2050,804 2039.7,799.35 2039.7,808.65" fill="#172B4D" />
+  <text x="1188.0" y="795" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">Lua INCR / EXPIRE: message quota</text>
+  <polyline points="2050,842 570,842" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="570,842 580.3,846.65 580.3,837.35" fill="#607086" />
+  <text x="1223.0" y="833" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">allowed + counter + TTL</text>
+  <polyline points="570,880 340,880" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="340,880 350.3,884.65 350.3,875.35" fill="#607086" />
+  <text x="400.5" y="871" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">quota accepted</text>
+  <polyline points="340,918 570,918" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="570,918 559.7,913.35 559.7,922.65" fill="#172B4D" />
+  <text x="391.25" y="909" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">ask(sid, message)</text>
+  <polyline points="570,956 636,956 636,973 570,973" fill="none" stroke="#6B48A5" stroke-width="1.2" />
+  <polygon points="570,973 580.2,977.6 580.2,968.4" fill="#6B48A5" />
+  <text x="584" y="948" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">create Trace scope</text>
+  <polyline points="570,998 810,998" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="810,998 799.7,993.35 799.7,1002.65" fill="#172B4D" />
+  <text x="624.25" y="989" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">aget_state(thread)</text>
+  <polyline points="810,1036 1790,1036" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="1790,1036 1779.7,1031.35 1779.7,1040.65" fill="#172B4D" />
+  <text x="1214.25" y="1027" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">read current Checkpoint</text>
+  <polyline points="1790,1074 810,1074" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="810,1074 820.3,1078.65 820.3,1069.35" fill="#607086" />
+  <text x="1259.0" y="1065" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">saved state</text>
+  <polyline points="810,1112 570,1112" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="570,1112 580.3,1116.65 580.3,1107.35" fill="#607086" />
+  <text x="657.75" y="1103" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">snapshot</text>
+  <polyline points="570,1150 636,1150 636,1167 570,1167" fill="none" stroke="#6B48A5" stroke-width="1.2" />
+  <polygon points="570,1167 580.2,1171.6 580.2,1162.4" fill="#6B48A5" />
+  <text x="584" y="1142" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">guard pending state</text>
+  <polyline points="570,1192 810,1192" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="810,1192 799.7,1187.35 799.7,1196.65" fill="#172B4D" />
+  <text x="626.5" y="1183" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">ainvoke(question)</text>
+  <polyline points="810,1230 876,1230 876,1247 810,1247" fill="none" stroke="#6B48A5" stroke-width="1.2" />
+  <polygon points="810,1247 820.2,1251.6 820.2,1242.4" fill="#6B48A5" />
+  <text x="824" y="1222" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">retrieve_memory hints</text>
+  <polyline points="810,1272 1540,1272" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="1540,1272 1529.7,1267.35 1529.7,1276.65" fill="#172B4D" />
+  <text x="1080.5" y="1263" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">SDK: Planner JSON request</text>
+  <polyline points="1540,1310 810,1310" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="810,1310 820.3,1314.65 820.3,1305.35" fill="#607086" />
+  <text x="1124.75" y="1301" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">JSON tool plan</text>
+  <polyline points="810,1348 876,1348 876,1365 810,1365" fill="none" stroke="#6B48A5" stroke-width="1.2" />
+  <polygon points="810,1365 820.2,1369.6 820.2,1360.4" fill="#6B48A5" />
+  <text x="824" y="1340" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">normalize whitelist</text>
+  <polyline points="810,1444 1050,1444" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="1050,1444 1039.7,1439.35 1039.7,1448.65" fill="#172B4D" />
+  <text x="843.5" y="1435" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">query_observability_tool</text>
+  <polyline points="1050,1482 1290,1482" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="1290,1482 1279.7,1477.35 1279.7,1486.65" fill="#172B4D" />
+  <text x="1117.25" y="1473" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">STDIO call_tool</text>
+  <polyline points="1290,1520 1050,1520" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="1050,1520 1060.3,1524.65 1060.3,1515.35" fill="#607086" />
+  <text x="1093.5" y="1511" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">synthetic observation</text>
+  <polyline points="1050,1558 810,1558" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="810,1558 820.3,1562.65 820.3,1553.35" fill="#607086" />
+  <text x="863.75" y="1549" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">validated tool data</text>
+  <polyline points="810,1622 876,1622 876,1639 810,1639" fill="none" stroke="#6B48A5" stroke-width="1.2" />
+  <polygon points="810,1639 820.2,1643.6 820.2,1634.4" fill="#6B48A5" />
+  <text x="824" y="1614" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">make evidence catalog</text>
+  <polyline points="810,1664 1540,1664" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="1540,1664 1529.7,1659.35 1529.7,1668.65" fill="#172B4D" />
+  <text x="980.0" y="1655" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">SDK: structured RCA JSON request (max_tokens=2200)</text>
+  <polyline points="1540,1702 810,1702" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="810,1702 820.3,1706.65 820.3,1697.35" fill="#607086" />
+  <text x="1054.75" y="1693" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">model hypotheses + evidence IDs</text>
+  <polyline points="810,1740 876,1740 876,1757 810,1757" fill="none" stroke="#6B48A5" stroke-width="1.2" />
+  <polygon points="810,1757 820.2,1761.6 820.2,1752.4" fill="#6B48A5" />
+  <text x="824" y="1732" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">validate_rca</text>
+  <polyline points="810,1836 1540,1836" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="1540,1836 1529.7,1831.35 1529.7,1840.65" fill="#172B4D" />
+  <text x="1006.0" y="1827" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">validation feedback → one new JSON generation</text>
+  <polyline points="1540,1874 810,1874" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="810,1874 820.3,1878.65 820.3,1869.35" fill="#607086" />
+  <text x="1037.75" y="1865" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">new JSON, then Python validates again</text>
+  <polyline points="810,1992 876,1992 876,2009 810,2009" fill="none" stroke="#6B48A5" stroke-width="1.2" />
+  <polygon points="810,2009 820.2,2013.6 820.2,2004.4" fill="#6B48A5" />
+  <text x="824" y="1984" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">human_approval interrupt</text>
+  <polyline points="64,2034 2156,2034" fill="none" stroke="#CCD5E0" stroke-width="1" stroke-dasharray="6 5" />
+  <rect x="76" y="2039" width="450" height="28" fill="#FFFFFF" stroke="none" stroke-width="1.2" />
+  <text x="80" y="2058" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="700" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">else  No eligible proposal</text>
+  <polyline points="810,2082 876,2082 876,2099 810,2099" fill="none" stroke="#6B48A5" stroke-width="1.2" />
+  <polygon points="810,2099 820.2,2103.6 820.2,2094.4" fill="#6B48A5" />
+  <text x="824" y="2074" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">END without action</text>
+  <polyline points="810,2150 1790,2150" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="1790,2150 1779.7,2145.35 1779.7,2154.65" fill="#172B4D" />
+  <text x="1080.75" y="2141" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">Saver checkpoints at graph steps / interrupt (not only at END)</text>
+  <polyline points="1790,2188 810,2188" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="810,2188 820.3,2192.65 820.3,2183.35" fill="#607086" />
+  <text x="1253.0" y="2179" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">durable state</text>
+  <polyline points="810,2226 570,2226" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="570,2226 580.3,2230.65 580.3,2221.35" fill="#607086" />
+  <text x="595.5" y="2217" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">result or interrupted result</text>
+  <polyline points="570,2264 810,2264" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="810,2264 799.7,2259.35 799.7,2268.65" fill="#172B4D" />
+  <text x="624.25" y="2255" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">aget_state(thread)</text>
+  <polyline points="810,2302 1790,2302" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="1790,2302 1779.7,2297.35 1779.7,2306.65" fill="#172B4D" />
+  <text x="1208.75" y="2293" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">read resulting Checkpoint</text>
+  <polyline points="1790,2340 810,2340" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="810,2340 820.3,2344.65 820.3,2335.35" fill="#607086" />
+  <text x="1207.5" y="2331" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">completed / pending state</text>
+  <polyline points="810,2378 570,2378" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="570,2378 580.3,2382.65 580.3,2373.35" fill="#607086" />
+  <text x="657.75" y="2369" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">snapshot</text>
+  <polyline points="570,2416 636,2416 636,2433 570,2433" fill="none" stroke="#6B48A5" stroke-width="1.2" />
+  <polygon points="570,2433 580.2,2437.6 580.2,2428.4" fill="#6B48A5" />
+  <text x="584" y="2408" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">finally: Trace JSONL</text>
+  <polyline points="570,2458 340,2458" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="340,2458 350.3,2462.65 350.3,2453.35" fill="#607086" />
+  <text x="387.25" y="2449" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">response summary</text>
+  <polyline points="340,2496 130,2496" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="130,2496 140.3,2500.65 140.3,2491.35" fill="#607086" />
+  <text x="146.75" y="2487" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">200 completed / pending</text>
+  <rect x="64" y="2516" width="2092" height="34" fill="#F5F7FA" stroke="none" stroke-width="1.2" />
+  <text x="80" y="2539" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">HITL RESUME  ·  Separate HTTP request, same Session / thread; no automatic approval</text>
+  <polyline points="130,2634 340,2634" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="340,2634 329.7,2629.35 329.7,2638.65" fill="#172B4D" />
+  <text x="179.25" y="2625" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">POST /decisions</text>
+  <polyline points="340,2672 570,2672" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="570,2672 559.7,2667.35 559.7,2676.65" fill="#172B4D" />
+  <text x="365.5" y="2663" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">approve(action, decision)</text>
+  <polyline points="570,2710 636,2710 636,2727 570,2727" fill="none" stroke="#6B48A5" stroke-width="1.2" />
+  <polygon points="570,2727 580.2,2731.6 580.2,2722.4" fill="#6B48A5" />
+  <text x="584" y="2702" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">create new Trace scope</text>
+  <polyline points="570,2752 810,2752" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="810,2752 799.7,2747.35 799.7,2756.65" fill="#172B4D" />
+  <text x="624.25" y="2743" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">aget_state(thread)</text>
+  <polyline points="810,2790 1790,2790" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="1790,2790 1779.7,2785.35 1779.7,2794.65" fill="#172B4D" />
+  <text x="1211.25" y="2781" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">read pending Checkpoint</text>
+  <polyline points="1790,2828 810,2828" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="810,2828 820.3,2832.65 820.3,2823.35" fill="#607086" />
+  <text x="1238.5" y="2819" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">pending proposal</text>
+  <polyline points="810,2866 570,2866" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="570,2866 580.3,2870.65 580.3,2861.35" fill="#607086" />
+  <text x="641.25" y="2857" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">pending state</text>
+  <polyline points="570,2904 636,2904 636,2921 570,2921" fill="none" stroke="#6B48A5" stroke-width="1.2" />
+  <polygon points="570,2921 580.2,2925.6 580.2,2916.4" fill="#6B48A5" />
+  <text x="584" y="2896" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">check pending / action_id</text>
+  <polyline points="570,2946 810,2946" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="810,2946 799.7,2941.35 799.7,2950.65" fill="#172B4D" />
+  <text x="589.0" y="2937" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">ainvoke(Command(resume))</text>
+  <polyline points="810,2984 876,2984 876,3001 810,3001" fill="none" stroke="#6B48A5" stroke-width="1.2" />
+  <polygon points="810,3001 820.2,3005.6 820.2,2996.4" fill="#6B48A5" />
+  <text x="824" y="2976" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">re-enter human_approval</text>
+  <polyline points="810,3026 1790,3026" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="1790,3026 1779.7,3021.35 1779.7,3030.65" fill="#172B4D" />
+  <text x="1048.5" y="3017" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">Write simulated / rejected audit; Saver checkpoints are separate writes</text>
+  <polyline points="1790,3064 810,3064" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="810,3064 820.3,3068.65 820.3,3059.35" fill="#607086" />
+  <text x="1214.75" y="3055" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">audit and state retained</text>
+  <polyline points="810,3102 570,3102" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="570,3102 580.3,3106.65 580.3,3097.35" fill="#607086" />
+  <text x="646.75" y="3093" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">graph result</text>
+  <polyline points="570,3140 810,3140" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="810,3140 799.7,3135.35 799.7,3144.65" fill="#172B4D" />
+  <text x="624.25" y="3131" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">aget_state(thread)</text>
+  <polyline points="810,3178 1790,3178" fill="none" stroke="#172B4D" stroke-width="1.3" />
+  <polygon points="1790,3178 1779.7,3173.35 1779.7,3182.65" fill="#172B4D" />
+  <text x="1224.75" y="3169" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">read final Checkpoint</text>
+  <polyline points="1790,3216 810,3216" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="810,3216 820.3,3220.65 820.3,3211.35" fill="#607086" />
+  <text x="1282.25" y="3207" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">state</text>
+  <polyline points="810,3254 570,3254" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="570,3254 580.3,3258.65 580.3,3249.35" fill="#607086" />
+  <text x="657.75" y="3245" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">snapshot</text>
+  <polyline points="570,3292 636,3292 636,3309 570,3309" fill="none" stroke="#6B48A5" stroke-width="1.2" />
+  <polygon points="570,3309 580.2,3313.6 580.2,3304.4" fill="#6B48A5" />
+  <text x="584" y="3284" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="400" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">finally: Trace JSONL</text>
+  <polyline points="570,3334 340,3334" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="340,3334 350.3,3338.65 350.3,3329.35" fill="#607086" />
+  <text x="390.25" y="3325" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">updated summary</text>
+  <polyline points="340,3372 130,3372" fill="none" stroke="#607086" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="130,3372 140.3,3376.65 140.3,3367.35" fill="#607086" />
+  <text x="157.5" y="3363" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">200 · simulated result</text>
+  <rect x="64" y="3418" width="2092" height="34" fill="#F5F7FA" stroke="none" stroke-width="1.2" />
+  <text x="80" y="3441" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Guard failures keep existing 4xx / 503 rules; LLM/tool failures retain conservative fallback behavior.</text>
+  <polyline points="64,3550 2156,3550" fill="none" stroke="#CCD5E0" stroke-width="1" />
+  <text x="64" y="3578" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Solid = request / internal call · Dashed = return / lifeline · opt / alt / loop are source-defined · Synthetic evidence; simulated actions only</text>
+</svg>

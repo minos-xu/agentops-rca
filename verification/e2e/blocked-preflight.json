@@ -1,0 +1,140 @@
+{
+  "status": "BLOCKED",
+  "reason": "Current project has no DEEPSEEK_API_KEY in process env, .env or .env.docker.",
+  "git_head": "4313fe1e5916028930b1482dc39742e22dc14e78",
+  "branch": "main",
+  "credentials": {
+    "process_key_present": false,
+    "project_dotenv_exists": false,
+    "project_docker_env_exists": true,
+    "docker_env_key_present": false,
+    "explicit_environment_file": false
+  },
+  "sdk_versions": {
+    "openai": "3.7.0",
+    "httpx": "0.28.1",
+    "httpx2": "2.12.0",
+    "mcp": "2.1.1",
+    "langgraph": "1.2.16"
+  },
+  "real_llm_requests": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "usage_returned": false,
+  "estimated_cost_usd": 0,
+  "cost_note": "No paid request made; no billing statement or current unit price was queried.",
+  "dns_tcp_tls_auth": "NOT_TESTED",
+  "agent_http_e2e": "NOT_EXECUTED",
+  "mcp_in_real_llm_e2e": false,
+  "rag_in_real_llm_e2e": false,
+  "postgres_redis_in_real_llm_e2e": false,
+  "real_llm_trace": "NOT_CREATED",
+  "fresh_safe_checks": [
+    {
+      "name": "offline",
+      "exit_code": 0,
+      "seconds": 26.591
+    },
+    {
+      "name": "rag",
+      "exit_code": 0,
+      "seconds": 17.41
+    },
+    {
+      "name": "mcp",
+      "exit_code": 0,
+      "seconds": 20.927
+    },
+    {
+      "name": "imports",
+      "exit_code": 0,
+      "seconds": 14.15
+    }
+  ],
+  "fresh_offline_results": [
+    {
+      "test": "test_hitl.py",
+      "log_file": "test_hitl.txt",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_workflow_interrupt.py",
+      "log_file": "test_workflow_interrupt.txt",
+      "exit_code": 0,
+      "seconds": 1.017
+    },
+    {
+      "test": "test_rca.py",
+      "log_file": "test_rca.txt",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_postgres_store.py",
+      "log_file": "test_postgres_store.txt",
+      "exit_code": 0,
+      "seconds": 0.115
+    },
+    {
+      "test": "test_redis_degradation.py",
+      "log_file": "test_redis_degradation.txt",
+      "exit_code": 0,
+      "seconds": 0.215
+    },
+    {
+      "test": "test_eval_regression.py",
+      "log_file": "test_eval_regression.txt",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_eval_scoring.py",
+      "log_file": "test_eval_scoring.txt",
+      "exit_code": 0,
+      "seconds": 0.065
+    },
+    {
+      "test": "test_eval_robustness.py",
+      "log_file": "test_eval_robustness.txt",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_observability.py",
+      "log_file": "test_observability.txt",
+      "exit_code": 0,
+      "seconds": 12.4
+    },
+    {
+      "test": "test_trace_wiring.py",
+      "log_file": "test_trace_wiring.txt",
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "test": "test_error_classification.py",
+      "log_file": "test_error_classification.txt",
+      "exit_code": 0,
+      "seconds": 0.917
+    },
+    {
+      "test": "test_recovery.py",
+      "log_file": "test_recovery.txt",
+      "exit_code": 0,
+      "seconds": 11.392
+    }
+  ],
+  "test_harness_adjustments": [
+    {
+      "test": "test_recovery.py::Recovery.test_real_saver_failure_preserves_pending_checkpoint",
+      "change": "Temporary FaultSaver uses a shared fault-flag dict across shallow clones; all assertions and strict msgpack remain enabled.",
+      "reason": "LangGraph 1.2.16 / checkpoint 4.3.0 derives a strict-serde saver clone; original boolean flag updates target the unused saver instance.",
+      "source_test_modified_by_runner": false
+    }
+  ],
+  "application_scripts_tests_evaluation_changed": false,
+  "other_projects_modified": false,
+  "docker_database_operations": false,
+  "commit_merge_push_release": false
+}

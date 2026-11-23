@@ -1,0 +1,70 @@
+%% Source-defined topology, not a record of completed live-LLM E2E execution.
+flowchart LR
+    CLIENT["Client / Tester"]
+
+    subgraph HOST["Linux host · Conda agent-dev · Single worker"]
+        direction LR
+        subgraph API_LAYER["API"]
+            API["FastAPI<br/>Validation · Session API"]
+        end
+        subgraph CORE["Agent orchestration"]
+            RT["Traced Runtime<br/>Lifecycle · Session guard"]
+            GRAPH["LangGraph Workflow<br/>Agent State · RCA / chat"]
+            HITL["HITL<br/>Interrupt / same-thread resume"]
+        end
+        MCP["MCP Clients<br/>STDIO · Tool / result checks"]
+        subgraph TOOL_LAYER["MCP subprocesses"]
+            OBS["Observability MCP<br/>Synthetic metrics · logs · traces"]
+            UTILITY["Utility MCP<br/>Safe demo tools"]
+            subgraph RAG_PROCESS["RAG subprocess"]
+                RAG["RAG MCP<br/>rag_query · Judge / generate"]
+                RETRIEVAL["Local Retrieval<br/>Embedding · FAISS · Reranker"]
+            end
+        end
+        MEMORY["Long-term Memory<br/>Historical hints · File / FAISS"]
+        TRACE["Collector → Trace JSONL<br/>Metadata · Timing · Usage"]
+    end
+
+    subgraph DOCKER["Docker Compose · Data services only"]
+        PG[("PostgreSQL<br/>Session · Checkpoint · Audit")]
+        REDIS[("Redis<br/>Case cache · Message quota")]
+    end
+    LLM["DeepSeek API<br/>External LLM provider<br/>Live E2E: pending credentials"]
+
+    CLIENT ==> API
+    API ==> RT
+    RT ==> GRAPH
+    GRAPH <-->|"Model requests / results"| LLM
+    GRAPH <-->|"Branch-specific tool calls"| MCP
+    MCP <-->|"INC evidence"| OBS
+    MCP -. "Chat tool choice" .-> UTILITY
+    MCP -. "Chat tool choice" .-> RAG
+    RAG <-->|"Retrieve / rerank"| RETRIEVAL
+    RAG -. "Answerability / generation" .-> LLM
+    GRAPH -. "Eligible proposal" .-> HITL
+    HITL -. "Human decision" .-> GRAPH
+    GRAPH <-->|"Recall hints"| MEMORY
+    RT -->|"Session / audit access"| PG
+    GRAPH -->|"Checkpoints"| PG
+    RT -->|"Cache / rate limit"| REDIS
+    RT -. "Observe request / callbacks" .-> TRACE
+
+    classDef api fill:#EFF6FF,stroke:#2563EB,color:#0F172A,stroke-width:1.5px
+    classDef agent fill:#F5F3FF,stroke:#7C3AED,color:#0F172A,stroke-width:1.5px
+    classDef tool fill:#F0FDFA,stroke:#0F766E,color:#0F172A,stroke-width:1.5px
+    classDef store fill:#FFF7ED,stroke:#C2410C,color:#0F172A,stroke-width:1.2px
+    classDef neutral fill:#F1F5F9,stroke:#64748B,color:#0F172A,stroke-width:1.2px
+    class API api
+    class RT,GRAPH,HITL agent
+    class MCP,OBS,UTILITY,RAG,RETRIEVAL tool
+    class PG,REDIS,MEMORY,TRACE store
+    class CLIENT,LLM neutral
+    style HOST fill:#FFFFFF,stroke:#CBD5E1
+    style API_LAYER fill:#FFFFFF,stroke:#DBEAFE
+    style CORE fill:#FFFFFF,stroke:#DDD6FE
+    style TOOL_LAYER fill:#FFFFFF,stroke:#CCFBF1
+    style RAG_PROCESS fill:#FFFFFF,stroke:#CCFBF1
+    style DOCKER fill:#FFFFFF,stroke:#FED7AA
+    linkStyle 0,1,2 stroke:#2563EB,stroke-width:3px
+    linkStyle 13,14,15 stroke:#C2410C,stroke-width:1px
+    linkStyle 16 stroke:#64748B,stroke-width:1px,stroke-dasharray:3 3

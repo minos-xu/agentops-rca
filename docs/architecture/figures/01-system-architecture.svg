@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="01-system-architecture">
+  <title>01-system-architecture</title>
+  <rect x="0" y="0" width="1920" height="1080" fill="#FFFFFF" stroke="none" stroke-width="1.2" />
+  <text x="64" y="62" font-family="DejaVu Sans, Arial, sans-serif" font-size="32" font-weight="700" fill="#172B4D" style="font-kerning:none;font-variant-ligatures:none">AgentOps RCA | System architecture</text>
+  <text x="64" y="95" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Source-audited implementation · Layered single-host design · Not a live execution trace</text>
+  <rect x="60" y="136" width="1430" height="150" fill="#EBF3FC" stroke="none" stroke-width="1.2" />
+  <text x="84" y="185" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">01  CLIENT / API</text>
+  <text x="84" y="215" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Validated HTTP entry</text>
+  <rect x="60" y="310" width="1430" height="166" fill="#F2EEFA" stroke="none" stroke-width="1.2" />
+  <text x="84" y="359" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">02  ORCHESTRATION</text>
+  <text x="84" y="389" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">One API process / worker</text>
+  <rect x="60" y="500" width="1430" height="280" fill="#EAF7F5" stroke="none" stroke-width="1.2" />
+  <text x="84" y="549" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#167B78" style="font-kerning:none;font-variant-ligatures:none">03  TOOLS /</text>
+  <text x="84" y="579" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">INTELLIGENCE</text>
+  <rect x="60" y="806" width="1430" height="150" fill="#FDF2E7" stroke="none" stroke-width="1.2" />
+  <text x="84" y="855" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#A96320" style="font-kerning:none;font-variant-ligatures:none">04  STATE /</text>
+  <text x="84" y="885" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">OBSERVABILITY</text>
+  <text x="1540" y="175" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">RUNTIME BOUNDARY</text>
+  <text x="1540" y="209" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Linux + Conda agent-dev</text>
+  <text x="1540" y="237" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Single Uvicorn worker</text>
+  <text x="1540" y="265" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">No application container</text>
+  <text x="1540" y="293" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">MCP over local STDIO</text>
+  <rect x="1520" y="500" width="340" height="280" fill="#F2F4F7" stroke="none" stroke-width="1.2" />
+  <text x="1540" y="532" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">EXTERNAL PROVIDER</text>
+  <rect x="350" y="172" width="260" height="80" fill="#FFFFFF" stroke="#245EA8" stroke-width="1.3" />
+  <text x="396.75" y="203" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">Client / Tester</text>
+  <text x="386.5" y="230" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">HTTP message / decision</text>
+  <rect x="735" y="172" width="700" height="80" fill="#FFFFFF" stroke="#245EA8" stroke-width="1.3" />
+  <text x="946.75" y="203" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#245EA8" style="font-kerning:none;font-variant-ligatures:none">FastAPI · app.main:app</text>
+  <text x="903.25" y="230" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Request validation · Session API · Loopback only</text>
+  <rect x="350" y="350" width="320" height="96" fill="#FFFFFF" stroke="#6B48A5" stroke-width="1.3" />
+  <text x="416.5" y="381" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">Traced Runtime</text>
+  <text x="415.5" y="408" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Agent Runtime · lifecycle</text>
+  <text x="398.0" y="431" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Session guard · Trace context</text>
+  <rect x="750" y="350" width="360" height="96" fill="#FFFFFF" stroke="#6B48A5" stroke-width="1.3" />
+  <text x="805.75" y="381" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">LangGraph Workflow</text>
+  <text x="838.25" y="408" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Agent State · RCA / chat</text>
+  <text x="811.75" y="431" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Evidence validation → response</text>
+  <rect x="1190" y="350" width="245" height="96" fill="#FFFFFF" stroke="#6B48A5" stroke-width="1.3" />
+  <text x="1285.75" y="381" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">HITL</text>
+  <text x="1235.25" y="408" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Conditional interrupt</text>
+  <text x="1233.75" y="431" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Same-thread resume</text>
+  <rect x="1100" y="540" width="335" height="86" fill="#FFFFFF" stroke="#167B78" stroke-width="1.3" />
+  <text x="1143.0" y="571" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#167B78" style="font-kerning:none;font-variant-ligatures:none">DeepSeek LLM Client</text>
+  <text x="1175.5" y="598" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Async Agent · Sync RAG</text>
+  <rect x="725" y="540" width="300" height="86" fill="#FFFFFF" stroke="#167B78" stroke-width="1.3" />
+  <text x="804.75" y="571" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#167B78" style="font-kerning:none;font-variant-ligatures:none">MCP Clients</text>
+  <text x="771.5" y="598" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">STDIO · Tool / result checks</text>
+  <rect x="350" y="540" width="300" height="86" fill="#FFFFFF" stroke="#167B78" stroke-width="1.3" />
+  <text x="387.0" y="571" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#167B78" style="font-kerning:none;font-variant-ligatures:none">Long-term Memory</text>
+  <text x="389.25" y="598" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Historical hints · JSON / FAISS</text>
+  <rect x="350" y="658" width="330" height="98" fill="#FFFFFF" stroke="#167B78" stroke-width="1.3" />
+  <text x="406.75" y="689" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#167B78" style="font-kerning:none;font-variant-ligatures:none">Observability MCP</text>
+  <text x="465.75" y="716" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">INC evidence</text>
+  <text x="395.5" y="739" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Synthetic metrics / logs / traces</text>
+  <rect x="720" y="658" width="255" height="98" fill="#FFFFFF" stroke="#167B78" stroke-width="1.3" />
+  <text x="782.0" y="689" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#167B78" style="font-kerning:none;font-variant-ligatures:none">Utility MCP</text>
+  <text x="783.25" y="716" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Chat branch only</text>
+  <text x="772.0" y="739" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Optional demo tools</text>
+  <rect x="1015" y="658" width="420" height="98" fill="#FFFFFF" stroke="#167B78" stroke-width="1.3" />
+  <text x="1066.75" y="689" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#167B78" style="font-kerning:none;font-variant-ligatures:none">RAG MCP + Local Retrieval</text>
+  <text x="1112.75" y="716" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Embedding · FAISS · Reranker</text>
+  <text x="1102.5" y="739" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Chat only · LLM judge / generate</text>
+  <rect x="1540" y="560" width="300" height="110" fill="#FFFFFF" stroke="#607086" stroke-width="1.3" />
+  <text x="1607.5" y="591" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">DeepSeek API</text>
+  <text x="1608.0" y="618" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">External LLM provider</text>
+  <text x="1600.0" y="641" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Not inside host / Docker</text>
+  <text x="1540" y="710" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="700" fill="#A96320" style="font-kerning:none;font-variant-ligatures:none">CURRENT LIVE E2E</text>
+  <text x="1540" y="740" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">BLOCKED · Credentials missing</text>
+  <rect x="336" y="830" width="775" height="112" fill="#FFF9F2" stroke="#A96320" stroke-width="1" />
+  <text x="350" y="824" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#A96320" style="font-kerning:none;font-variant-ligatures:none">Docker Compose data services</text>
+  <rect x="350" y="846" width="420" height="80" fill="#FFFFFF" stroke="#A96320" stroke-width="1.3" />
+  <text x="490.75" y="877" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#A96320" style="font-kerning:none;font-variant-ligatures:none">PostgreSQL</text>
+  <text x="413.5" y="904" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Session · Checkpoint · Simulation audit</text>
+  <rect x="825" y="846" width="270" height="80" fill="#FFFFFF" stroke="#A96320" stroke-width="1.3" />
+  <text x="927.75" y="877" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#A96320" style="font-kerning:none;font-variant-ligatures:none">Redis</text>
+  <text x="873.5" y="904" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Case cache · Rate limit</text>
+  <text x="1150" y="832" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="700" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">API process + host file</text>
+  <rect x="1150" y="846" width="285" height="80" fill="#FFFFFF" stroke="#A96320" stroke-width="1.3" />
+  <text x="1203.25" y="877" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#A96320" style="font-kerning:none;font-variant-ligatures:none">Trace Collector</text>
+  <text x="1223.25" y="904" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Metadata → JSONL</text>
+  <polyline points="610,212 735,212" fill="none" stroke="#245EA8" stroke-width="3" />
+  <polygon points="735,212 723.0,206.5 723.0,217.5" fill="#245EA8" />
+  <polyline points="850,252 850,298 510,298 510,350" fill="none" stroke="#245EA8" stroke-width="3" />
+  <polygon points="510,350 515.5,338.0 504.5,338.0" fill="#245EA8" />
+  <polyline points="670,398 750,398" fill="none" stroke="#6B48A5" stroke-width="3" />
+  <polygon points="750,398 738.0,392.5 738.0,403.5" fill="#6B48A5" />
+  <polyline points="1110,398 1190,398" fill="none" stroke="#6B48A5" stroke-width="1.7" stroke-dasharray="6 5" />
+  <polygon points="1190,398 1179.3,393.15 1179.3,402.85" fill="#6B48A5" />
+  <polyline points="1300,446 1300,468 1050,468 1050,446" fill="none" stroke="#6B48A5" stroke-width="1.3" stroke-dasharray="6 5" />
+  <polygon points="1050,446 1045.35,456.3 1054.65,456.3" fill="#6B48A5" />
+  <text x="1145" y="463" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="400" fill="#6B48A5" style="font-kerning:none;font-variant-ligatures:none">human resume</text>
+  <polyline points="930,446 930,488 500,488 500,540" fill="none" stroke="#167B78" stroke-width="1.8" />
+  <polygon points="500,540 504.9,529.2 495.1,529.2" fill="#167B78" />
+  <polyline points="930,446 930,488 875,488 875,540" fill="none" stroke="#167B78" stroke-width="1.8" />
+  <polygon points="875,540 879.9,529.2 870.1,529.2" fill="#167B78" />
+  <polyline points="930,446 930,488 1267,488 1267,540" fill="none" stroke="#167B78" stroke-width="1.8" />
+  <polygon points="1267,540 1271.9,529.2 1262.1,529.2" fill="#167B78" />
+  <polyline points="875,626 875,644 515,644 515,658" fill="none" stroke="#167B78" stroke-width="1.6" />
+  <polygon points="515,658 519.8,647.4 510.2,647.4" fill="#167B78" />
+  <polyline points="875,626 875,644 847,644 847,658" fill="none" stroke="#167B78" stroke-width="1.6" stroke-dasharray="6 5" />
+  <polygon points="847,658 851.8,647.4 842.2,647.4" fill="#167B78" />
+  <polyline points="875,626 875,644 1225,644 1225,658" fill="none" stroke="#167B78" stroke-width="1.6" stroke-dasharray="6 5" />
+  <polygon points="1225,658 1229.8,647.4 1220.2,647.4" fill="#167B78" />
+  <polyline points="1435,583 1540,583" fill="none" stroke="#607086" stroke-width="1.6" />
+  <polygon points="1540,583 1529.4,578.2 1529.4,587.8" fill="#607086" />
+  <text x="1450" y="575" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">SDK / API</text>
+  <polyline points="365,446 330,446 330,792 1293,792" fill="none" stroke="#A96320" stroke-width="1.2" stroke-dasharray="6 5" />
+  <polyline points="560,792 560,846" fill="none" stroke="#A96320" stroke-width="1.2" stroke-dasharray="6 5" />
+  <polygon points="560,846 564.6,835.8 555.4,835.8" fill="#A96320" />
+  <polyline points="960,792 960,846" fill="none" stroke="#A96320" stroke-width="1.2" stroke-dasharray="6 5" />
+  <polygon points="960,846 964.6,835.8 955.4,835.8" fill="#A96320" />
+  <polyline points="1293,792 1293,846" fill="none" stroke="#A96320" stroke-width="1.2" stroke-dasharray="6 5" />
+  <polygon points="1293,846 1297.6,835.8 1288.4,835.8" fill="#A96320" />
+  <polyline points="76,985 124,985" fill="none" stroke="#245EA8" stroke-width="3" />
+  <polygon points="124,985 112.0,979.5 112.0,990.5" fill="#245EA8" />
+  <text x="136" y="991" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Main request</text>
+  <polyline points="340,985 388,985" fill="none" stroke="#167B78" stroke-width="1.6" stroke-dasharray="6 5" />
+  <polygon points="388,985 377.4,980.2 377.4,989.8" fill="#167B78" />
+  <text x="400" y="991" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Conditional call</text>
+  <polyline points="640,985 688,985" fill="none" stroke="#A96320" stroke-width="1.2" stroke-dasharray="6 5" />
+  <polygon points="688,985 677.8,980.4 677.8,989.6" fill="#A96320" />
+  <text x="700" y="991" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Supporting state / Trace</text>
+  <text x="1120" y="991" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Arrows show calls; results are detailed in the sequence.</text>
+  <polyline points="64,1023 1856,1023" fill="none" stroke="#CCD5E0" stroke-width="1" />
+  <text x="64" y="1051" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="400" fill="#607086" style="font-kerning:none;font-variant-ligatures:none">Synthetic telemetry and simulated actions only · Real DeepSeek E2E pending credentials · Source: main 4313fe1 + audited working tree</text>
+</svg>
