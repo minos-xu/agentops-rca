@@ -52,7 +52,7 @@
 
 此图描述源码定义的 `INC-*` 诊断分支：请求/返回方向、真实STDIO接口、条件HITL与另一个HTTP请求中的同线程恢复。Trace在Runtime的finally中写入，Checkpoint由Saver在图步骤及中断时保存。批准也只产生模拟审计。
 
-**Real DeepSeek E2E pending credentials.** RAG/Utility不在本事故分支，未为了凑参与者画成必经环节；本图不是一次已经成功执行的真实API日志。
+**Real DeepSeek E2E pending credentials.** 
 
 </details>
 
@@ -84,7 +84,7 @@ bash scripts/manage.sh up --offline
 bash scripts/manage.sh health
 ```
 
-默认 API 为 `127.0.0.1:8164`，文档入口 `/docs`。`--offline` 用于本地依赖与状态验收，不提供真实 LLM 诊断。真实演示需安全配置 `DEEPSEEK_API_KEY` 后以在线模式启动，并先补齐真实 E2E 验收。
+默认 API 为 `127.0.0.1:8164`，文档入口 `/docs`。`
 
 ```bash
 bash scripts/manage.sh test
